@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diesel Delights by Vince — Sacramento</title>
-  <meta name="description" content="Diesel Delights by Vince. Vietnamese roots. Firehouse soul. Signature plates cooked Vince's way in Natomas, Sacramento.">
+  <title>Diesel Delights Vince Creations — Sacramento</title>
+  <meta name="description" content="Diesel Delights Vince Creations. Vietnamese roots. Firehouse soul. Signature plates cooked Vince's way in Natomas, Sacramento.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600&display=swap" rel="stylesheet">
@@ -160,12 +160,18 @@
     .menu-card {
       background: rgba(245,240,232,0.04);
       border: 1px solid rgba(245,240,232,0.08);
-      padding: 2rem;
+      padding: 0;
+      overflow: hidden;
       transition: border-color 0.3s, transform 0.2s;
     }
     .menu-card:hover {
       border-color: var(--flame); transform: translateY(-3px);
     }
+    .menu-card-img {
+      width: 100%; height: 200px;
+      object-fit: cover; display: block;
+    }
+    .menu-card-body { padding: 1.5rem 2rem 2rem; }
     .menu-card-label {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700; font-size: 0.75rem;
@@ -189,56 +195,61 @@
     /* ── SAUCE SECTION ── */
     .sauce-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 2rem;
     }
     .sauce-card {
       position: relative; overflow: hidden;
       border: 1px solid rgba(245,240,232,0.08);
-      background: linear-gradient(145deg, rgba(245,240,232,0.05) 0%, rgba(26,26,26,0.95) 100%);
+      background: linear-gradient(145deg, rgba(245,240,232,0.04) 0%, rgba(26,26,26,0.98) 100%);
       padding: 0; transition: transform 0.3s, border-color 0.3s;
     }
     .sauce-card:hover { transform: translateY(-4px); border-color: var(--flame); }
-    .sauce-card-header {
-      position: relative; padding: 2rem 2rem 1.5rem;
-      background-size: cover; background-position: center;
+    .sauce-card-img-wrap {
+      position: relative; width: 100%; height: 240px;
+      overflow: hidden;
+      background: var(--black-light);
     }
-    .sauce-card-header::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(26,26,26,0.3), rgba(26,26,26,0.95));
+    .sauce-card-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.4s ease;
     }
-    .sauce-card-header > * { position: relative; z-index: 1; }
-    .sauce-emoji {
-      font-size: 2.8rem; margin-bottom: 0.5rem; display: block;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
-    }
+    .sauce-card:hover .sauce-card-img-wrap img { transform: scale(1.05); }
     .sauce-badge {
+      position: absolute; top: 1rem; left: 1rem; z-index: 2;
       display: inline-block;
-      padding: 0.25rem 0.7rem;
+      padding: 0.3rem 0.8rem;
       font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700; font-size: 0.65rem;
+      font-weight: 700; font-size: 0.7rem;
       text-transform: uppercase; letter-spacing: 1.5px;
-      border-radius: 2px; margin-bottom: 0.75rem;
+      border-radius: 2px;
     }
     .badge-spicy { background: var(--red); color: #fff; }
     .badge-savory { background: var(--brass); color: var(--black); }
     .badge-fresh { background: var(--herb); color: #fff; }
     .badge-nutty { background: #8B6914; color: #fff; }
     .badge-clean { background: var(--ocean); color: #fff; }
+    .sauce-card-body { padding: 1.5rem 2rem 2rem; }
+    .sauce-card-body .sauce-code {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 0.7rem;
+      color: var(--flame); letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 0.3rem;
+      display: block;
+    }
     .sauce-card h3 {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800; font-size: 1.5rem;
       text-transform: uppercase; letter-spacing: 1px;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.3rem;
     }
-    .sauce-card .sauce-code {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600; font-size: 0.8rem;
-      color: var(--flame); letter-spacing: 2px;
-      text-transform: uppercase;
+    .sauce-tagline {
+      font-family: 'Caveat', cursive;
+      color: var(--brass); font-size: 1rem;
+      margin-bottom: 0.8rem;
     }
-    .sauce-card-body { padding: 1.5rem 2rem 2rem; }
-    .sauce-card-body p {
+    .sauce-card-body > p {
       font-size: 0.9rem; color: rgba(245,240,232,0.7);
       line-height: 1.55; margin-bottom: 1rem;
     }
@@ -260,6 +271,18 @@
       letter-spacing: 1px; color: rgba(245,240,232,0.45);
     }
     .sauce-paired strong { color: var(--brass); }
+    .sauce-cta-row {
+      display: flex; align-items: center; gap: 1rem;
+      margin-top: 1.2rem; padding-top: 1rem;
+      border-top: 1px solid rgba(245,240,232,0.06);
+    }
+    .sauce-use {
+      font-size: 0.8rem; color: rgba(245,240,232,0.5);
+      line-height: 1.4;
+    }
+    .sauce-use strong {
+      color: var(--bone); font-weight: 600;
+    }
 
     /* ── PAIRINGS SECTION ── */
     .pairings-grid {
@@ -277,8 +300,12 @@
     .pairing-card:hover { border-color: var(--flame); transform: translateY(-2px); }
     .pairing-img {
       display: flex; align-items: center; justify-content: center;
-      font-size: 3.5rem;
+      font-size: 3.5rem; overflow: hidden;
       background: linear-gradient(135deg, rgba(232,96,10,0.12), rgba(201,168,76,0.08));
+    }
+    .pairing-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
     }
     .pairing-content { padding: 1.5rem; }
     .pairing-num {
@@ -315,6 +342,100 @@
       line-height: 1.5;
     }
 
+    /* ── CALORIE TABLE ── */
+    .cal-table {
+      width: 100%;
+      border: 1px solid rgba(245,240,232,0.08);
+      overflow: hidden;
+    }
+    .cal-row {
+      display: grid;
+      grid-template-columns: 40px 1fr 1fr 120px 1.2fr;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(245,240,232,0.05);
+      transition: background 0.2s;
+    }
+    .cal-row:last-child { border-bottom: none; }
+    .cal-row:hover:not(.cal-header) { background: rgba(245,240,232,0.03); }
+    .cal-header {
+      background: rgba(232,96,10,0.08);
+      border-bottom: 2px solid rgba(232,96,10,0.2);
+      padding: 0.8rem 1.5rem;
+    }
+    .cal-header .cal-cell {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 0.7rem;
+      text-transform: uppercase; letter-spacing: 2px;
+      color: var(--flame);
+    }
+    .cal-cell { font-size: 0.9rem; }
+    .cal-rank {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 1rem;
+      color: var(--flame);
+    }
+    .cal-dish-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.05rem;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .cal-detail {
+      font-size: 0.82rem;
+      color: rgba(245,240,232,0.45);
+      font-style: italic;
+    }
+    .cal-number {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      color: var(--brass);
+      text-align: right;
+    }
+    .cal-bar-cell {
+      display: flex; align-items: center;
+      padding-left: 1rem;
+    }
+    .cal-bar-head { padding-left: 1rem; }
+    .cal-bar {
+      height: 8px; border-radius: 4px;
+      display: block;
+      transition: width 0.6s ease;
+    }
+    .cal-light .cal-dish-name::after {
+      content: 'LIGHT';
+      display: inline-block;
+      margin-left: 0.6rem;
+      padding: 0.1rem 0.5rem;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      background: var(--herb);
+      color: #fff;
+      border-radius: 2px;
+      vertical-align: middle;
+    }
+    .cal-legend {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .cal-legend-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.78rem;
+      color: rgba(245,240,232,0.5);
+    }
+    .cal-legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 2px; flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .cal-row {
+        grid-template-columns: 30px 1fr 100px;
+        gap: 0.3rem;
+      }
+      .cal-detail, .cal-bar-cell, .cal-bar-head { display: none; }
+    }
+
     /* ── GALLERY ── */
     .gallery-grid {
       display: grid;
@@ -324,17 +445,24 @@
     .gallery-item {
       position: relative; overflow: hidden;
       aspect-ratio: 1; cursor: pointer;
-      background: linear-gradient(135deg, rgba(232,96,10,0.08), rgba(201,168,76,0.06));
-      display: flex; align-items: center; justify-content: center;
+      background: var(--black-light);
     }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
     .gallery-item .gallery-emoji {
       font-size: 3rem;
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
       transition: transform 0.3s;
     }
-    .gallery-item:hover .gallery-emoji { transform: scale(1.15); }
+    .gallery-item:hover .gallery-emoji { transform: translate(-50%, -50%) scale(1.15); }
     .gallery-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(26,26,26,0.9) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(26,26,26,0.9) 0%, transparent 50%);
       display: flex; flex-direction: column;
       justify-content: flex-end; padding: 1rem;
       opacity: 0; transition: opacity 0.3s;
@@ -470,6 +598,7 @@
       <li><a href="#menu">Menu</a></li>
       <li><a href="#sauces">Sauces</a></li>
       <li><a href="#pairings">Pairings</a></li>
+      <li><a href="#calories">Calories</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#story">Story</a></li>
       <li><a href="#location">Location</a></li>
@@ -478,7 +607,7 @@
 
   <!-- ══ HERO ══ -->
   <header class="hero">
-    <p class="hero-tagline">by Vince</p>
+    <p class="hero-tagline">Vince Creations</p>
     <h1>Diesel<br><span class="flame">Delights</span></h1>
     <p class="hero-sub">Turn the gas up.</p>
     <p class="hero-slogan">Vietnamese roots. Firehouse soul. Signature plates cooked Vince's way in Natomas, Sacramento.</p>
@@ -530,52 +659,73 @@
     <div class="menu-grid">
 
       <div class="menu-card">
-        <div class="menu-card-label">No. 1 &mdash; Fresh Start</div>
-        <h3>Diesel Counter Health</h3>
-        <p>2 fresh spring rolls (shrimp or pork) packed with herbs and crunch. Paired with Diesel Hoisin (DH) &mdash; sweet, tangy, garlic.</p>
-        <span class="price">$10</span>
+        <img class="menu-card-img" src="assets/diesel-counter-health.png" alt="Diesel Counter Health — Spring Rolls">
+        <div class="menu-card-body">
+          <div class="menu-card-label">No. 1 &mdash; Fresh Start</div>
+          <h3>Diesel Counter Health</h3>
+          <p>2 fresh spring rolls (shrimp or pork) packed with herbs and crunch. Paired with Diesel Hoisin (DH) &mdash; sweet, tangy, garlic.</p>
+          <span class="price">$10</span>
+        </div>
       </div>
 
       <div class="menu-card">
-        <div class="menu-card-label">No. 2 &mdash; The Healer</div>
-        <h3>Diesel Cure</h3>
-        <p>1 piece ginger-loaded chicken over hot jasmine rice with pickled veg and herbs. Drizzled with Diesel Fish-Garlic &mdash; tons of garlic, pepper, and punch.</p>
-        <span class="price">$10</span>
+        <img class="menu-card-img" src="assets/diesel-cure.png" alt="Diesel Cure — Ginger Chicken over Rice">
+        <div class="menu-card-body">
+          <div class="menu-card-label">No. 2 &mdash; The Healer</div>
+          <h3>Diesel Cure</h3>
+          <p>1 piece ginger-loaded chicken over hot jasmine rice with pickled veg and herbs. Drizzled with Diesel Fish-Garlic &mdash; tons of garlic, pepper, and punch.</p>
+          <span class="price">$10</span>
+        </div>
       </div>
 
       <div class="menu-card">
-        <div class="menu-card-label">No. 3 &mdash; The Old Soul</div>
-        <h3>Pho Duoi</h3>
-        <p>Ancient Diesel Soup. 1 bowl &mdash; deep house broth, 12+ hours in the pot, your choice of protein. Served classic with hoisin and sriracha.</p>
-        <span class="price">$10</span>
+        <img class="menu-card-img" src="assets/pho-duoi.png" alt="Pho Duoi — Ancient Diesel Soup">
+        <div class="menu-card-body">
+          <div class="menu-card-label">No. 3 &mdash; The Old Soul</div>
+          <h3>Pho Duoi</h3>
+          <p>Ancient Diesel Soup. 1 bowl &mdash; deep house broth, 12+ hours in the pot, your choice of protein. Served classic with hoisin and sriracha.</p>
+          <span class="price">$10</span>
+        </div>
       </div>
 
       <div class="menu-card">
-        <div class="menu-card-label">No. 4 &mdash; Red Meat Hit</div>
-        <h3>Red Pure Diesel Leaf</h3>
-        <p>Sliced tri-tip in fresh lettuce wraps with Diesel Chili (DC) &mdash; cilantro, lime, sriracha. Pickled veg, herbs, jalape&ntilde;o.</p>
-        <span class="price">$10</span>
+        <img class="menu-card-img" src="assets/red-pure-diesel-leaf.png" alt="Red Pure Diesel Leaf — Tri-Tip Lettuce Wraps">
+        <div class="menu-card-body">
+          <div class="menu-card-label">No. 4 &mdash; Red Meat Hit</div>
+          <h3>Red Pure Diesel Leaf</h3>
+          <p>Sliced tri-tip in fresh lettuce wraps with Diesel Chili (DC) &mdash; cilantro, lime, sriracha. Pickled veg, herbs, jalape&ntilde;o.</p>
+          <span class="price">$10</span>
+        </div>
       </div>
 
       <div class="menu-card">
-        <div class="menu-card-label">No. 5 &mdash; The Showpiece</div>
-        <h3>Diesel Torch Sensation</h3>
-        <p>2 oysters torched with butter, garlic, and chili. Served with Diesel Chili (DC) on the side. Order more in 2-piece sets.</p>
-        <span class="price">$10</span>
+        <img class="menu-card-img" src="assets/diesel-torch-sensation.png" alt="Diesel Torch Sensation — Torched Oysters">
+        <div class="menu-card-body">
+          <div class="menu-card-label">No. 5 &mdash; The Showpiece</div>
+          <h3>Diesel Torch Sensation</h3>
+          <p>2 oysters torched with butter, garlic, and chili. Served with Diesel Chili (DC) on the side. Order more in 2-piece sets.</p>
+          <span class="price">$10</span>
+        </div>
       </div>
 
       <div class="menu-card">
-        <div class="menu-card-label">No. 6 &mdash; Comfort Bomb</div>
-        <h3>Ancient Diesel Fried Rice</h3>
-        <p>1 bowl smoky wok-fired rice with Chinese sausage, shrimp, egg, and mixed veg. Sriracha on the side &mdash; that's all it needs.</p>
-        <span class="price">$10</span>
+        <img class="menu-card-img" src="assets/ancient-diesel-fried-rice.png" alt="Ancient Diesel Fried Rice">
+        <div class="menu-card-body">
+          <div class="menu-card-label">No. 6 &mdash; Comfort Bomb</div>
+          <h3>Ancient Diesel Fried Rice</h3>
+          <p>1 bowl smoky wok-fired rice with Chinese sausage, shrimp, egg, and mixed veg. Sriracha on the side &mdash; that's all it needs.</p>
+          <span class="price">$10</span>
+        </div>
       </div>
 
       <div class="menu-card">
-        <div class="menu-card-label">No. 7 &mdash; Ocean Soul</div>
-        <h3>Diesel Ocean Comfort</h3>
-        <p>1 bowl clams steamed in garlicky ginger broth with lemongrass and chili. No sauce needed &mdash; the broth does all the work.</p>
-        <span class="price">$10</span>
+        <img class="menu-card-img" src="assets/diesel-ocean-comfort.png" alt="Diesel Ocean Comfort — Clams in Broth">
+        <div class="menu-card-body">
+          <div class="menu-card-label">No. 7 &mdash; Ocean Soul</div>
+          <h3>Diesel Ocean Comfort</h3>
+          <p>1 bowl clams steamed in garlicky ginger broth with lemongrass and chili. No sauce needed &mdash; the broth does all the work.</p>
+          <span class="price">$10</span>
+        </div>
       </div>
 
       <div class="menu-card" style="border-color: var(--brass); background: rgba(201,168,76,0.05);">
@@ -594,7 +744,7 @@
   <section id="sauces">
     <p class="section-label">The Flavor DNA</p>
     <h2 class="section-title">Diesel Sauce Family</h2>
-    <p class="section-subtitle">Five house sauces built by Vince. Each one assigned to its plate. This is what makes Diesel Delights taste like Diesel Delights &mdash; nowhere else.</p>
+    <p class="section-subtitle">Five house sauces built by Vince Creations. Each one assigned to its plate. This is what makes Diesel Delights taste like Diesel Delights &mdash; nowhere else.</p>
 
     <div class="sauce-key">
       <div class="sauce-key-item">
@@ -623,14 +773,15 @@
 
       <!-- DC -->
       <div class="sauce-card">
-        <div class="sauce-card-header">
-          <span class="sauce-emoji">&#x1F336;&#xFE0F;</span>
+        <div class="sauce-card-img-wrap">
+          <img src="assets/dc-final.png" alt="Diesel Chili Sauce bottle">
           <span class="sauce-badge badge-spicy">Bright &amp; Spicy</span>
-          <h3>Diesel Chili Sauce</h3>
-          <span class="sauce-code">DC</span>
         </div>
         <div class="sauce-card-body">
-          <p>Fish-sauce based green chili sauce with cilantro, lime, and sriracha. Bright, fresh, and punchy &mdash; cuts through rich, fatty, smoky proteins like a blade.</p>
+          <span class="sauce-code">DC</span>
+          <h3>Diesel Chili Sauce</h3>
+          <div class="sauce-tagline">Bright. Fresh. Spicy.</div>
+          <p>Fish-sauce based green chili sauce with cilantro, lime, and sriracha. Cuts through rich, fatty, smoky proteins like a blade.</p>
           <ul class="sauce-ingredients">
             <li>Fish Sauce</li>
             <li>Cilantro</li>
@@ -640,19 +791,23 @@
             <li>Sugar</li>
           </ul>
           <p class="sauce-paired">Paired with <strong>Red Pure Diesel Leaf</strong> &amp; <strong>Diesel Torch Sensation</strong></p>
+          <div class="sauce-cta-row">
+            <div class="sauce-use"><strong>Use:</strong> Drizzle on charred meats, dip lettuce wraps, top torched oysters.</div>
+          </div>
         </div>
       </div>
 
       <!-- DFG -->
       <div class="sauce-card">
-        <div class="sauce-card-header">
-          <span class="sauce-emoji">&#x1F9C4;</span>
+        <div class="sauce-card-img-wrap">
+          <img src="assets/dfg-final.png" alt="Diesel Fish-Garlic bottle">
           <span class="sauce-badge badge-savory">Garlic Bomb</span>
-          <h3>Diesel Fish-Garlic</h3>
-          <span class="sauce-code">DFG</span>
         </div>
         <div class="sauce-card-body">
-          <p>An aggressive, garlic-loaded fish sauce drizzle built specifically for the Diesel Cure. So much garlic it hits you from three feet away. Pepper-heavy, salty-sweet, no apologies.</p>
+          <span class="sauce-code">DFG</span>
+          <h3>Diesel Fish-Garlic</h3>
+          <div class="sauce-tagline">Garlic Bomb. No Apologies.</div>
+          <p>An aggressive, garlic-loaded fish sauce drizzle. So much garlic it hits you from three feet away. Pepper-heavy, salty-sweet, no apologies.</p>
           <ul class="sauce-ingredients">
             <li>Fish Sauce</li>
             <li>Tons of Garlic</li>
@@ -661,18 +816,22 @@
             <li>Salt</li>
           </ul>
           <p class="sauce-paired">Paired with <strong>Diesel Cure</strong> (Ginger Chicken)</p>
+          <div class="sauce-cta-row">
+            <div class="sauce-use"><strong>Use:</strong> Drizzle over hot rice and chicken. Pour it on &mdash; don't be shy.</div>
+          </div>
         </div>
       </div>
 
       <!-- DH -->
       <div class="sauce-card">
-        <div class="sauce-card-header">
-          <span class="sauce-emoji">&#x1F36F;</span>
+        <div class="sauce-card-img-wrap">
+          <img src="assets/dh-final.png" alt="Diesel Hoisin bottle">
           <span class="sauce-badge badge-savory">Sweet &amp; Tangy</span>
-          <h3>Diesel Hoisin</h3>
-          <span class="sauce-code">DH</span>
         </div>
         <div class="sauce-card-body">
+          <span class="sauce-code">DH</span>
+          <h3>Diesel Hoisin</h3>
+          <div class="sauce-tagline">Sweet. Tangy. Garlic.</div>
           <p>Vince's clean, bright hoisin &mdash; not the thick, dark, store-bought kind. Built from vinegar, garlic, and sugar. The friendly, dippable one everybody reaches for.</p>
           <ul class="sauce-ingredients">
             <li>Rice Vinegar</li>
@@ -682,18 +841,22 @@
             <li>Sugar</li>
           </ul>
           <p class="sauce-paired">Paired with <strong>Diesel Counter Health</strong> (Spring Rolls)</p>
+          <div class="sauce-cta-row">
+            <div class="sauce-use"><strong>Use:</strong> Dip spring rolls, drizzle on pho, spread on banh mi.</div>
+          </div>
         </div>
       </div>
 
       <!-- DF -->
       <div class="sauce-card">
-        <div class="sauce-card-header">
-          <span class="sauce-emoji">&#x1F4A7;</span>
+        <div class="sauce-card-img-wrap">
+          <img src="assets/df-final.png" alt="Diesel Fish Sauce bottle">
           <span class="sauce-badge badge-clean">Clean &amp; Sharp</span>
-          <h3>Diesel Fish Sauce</h3>
-          <span class="sauce-code">DF</span>
         </div>
         <div class="sauce-card-body">
+          <span class="sauce-code">DF</span>
+          <h3>Diesel Fish Sauce</h3>
+          <div class="sauce-tagline">Clean. Sharp. Essential.</div>
           <p>Clear, sharp, all-purpose nuoc cham-style sauce. Tangy, slightly sweet, with garlic bite and pepper finish. The base layer of the Diesel flavor system.</p>
           <ul class="sauce-ingredients">
             <li>Rice Vinegar</li>
@@ -704,18 +867,22 @@
             <li>Black Pepper</li>
           </ul>
           <p class="sauce-paired">Available as <strong>extra with any plate</strong></p>
+          <div class="sauce-cta-row">
+            <div class="sauce-use"><strong>Use:</strong> All-purpose table sauce. Goes with everything on the menu.</div>
+          </div>
         </div>
       </div>
 
       <!-- DP -->
       <div class="sauce-card">
-        <div class="sauce-card-header">
-          <span class="sauce-emoji">&#x1F95C;</span>
+        <div class="sauce-card-img-wrap">
+          <img src="assets/dp-final.png" alt="Diesel Peanut Sauce jar">
           <span class="sauce-badge badge-nutty">Rich &amp; Nutty</span>
-          <h3>Diesel Peanut Sauce</h3>
-          <span class="sauce-code">DP</span>
         </div>
         <div class="sauce-card-body">
+          <span class="sauce-code">DP</span>
+          <h3>Diesel Peanut Sauce</h3>
+          <div class="sauce-tagline">Rich. Nutty. Savory.</div>
           <p>Fish-sauce based peanut dip &mdash; not sweet like Thai peanut sauce. Savory, nutty, with body from the oil and depth from the fish sauce. Chunky peanut texture.</p>
           <ul class="sauce-ingredients">
             <li>Peanuts</li>
@@ -725,6 +892,9 @@
             <li>Sugar</li>
           </ul>
           <p class="sauce-paired">Optional extra for <strong>Diesel Counter Health</strong> (Spring Rolls)</p>
+          <div class="sauce-cta-row">
+            <div class="sauce-use"><strong>Use:</strong> Dip spring rolls, toss with noodles, drizzle on grilled meats.</div>
+          </div>
         </div>
       </div>
 
@@ -742,7 +912,7 @@
     <div class="pairings-grid">
 
       <div class="pairing-card">
-        <div class="pairing-img">&#x1F96F;</div>
+        <div class="pairing-img"><img src="assets/diesel-counter-health.png" alt="Diesel Counter Health"></div>
         <div class="pairing-content">
           <div class="pairing-num">No. 1 &mdash; $10</div>
           <h3>Diesel Counter Health</h3>
@@ -756,7 +926,7 @@
       </div>
 
       <div class="pairing-card">
-        <div class="pairing-img">&#x1F357;</div>
+        <div class="pairing-img"><img src="assets/diesel-cure.png" alt="Diesel Cure"></div>
         <div class="pairing-content">
           <div class="pairing-num">No. 2 &mdash; $10</div>
           <h3>Diesel Cure</h3>
@@ -770,7 +940,7 @@
       </div>
 
       <div class="pairing-card">
-        <div class="pairing-img">&#x1F35C;</div>
+        <div class="pairing-img"><img src="assets/pho-duoi.png" alt="Pho Duoi"></div>
         <div class="pairing-content">
           <div class="pairing-num">No. 3 &mdash; $10</div>
           <h3>Pho Duoi</h3>
@@ -784,7 +954,7 @@
       </div>
 
       <div class="pairing-card">
-        <div class="pairing-img">&#x1F969;</div>
+        <div class="pairing-img"><img src="assets/red-pure-diesel-leaf.png" alt="Red Pure Diesel Leaf"></div>
         <div class="pairing-content">
           <div class="pairing-num">No. 4 &mdash; $10</div>
           <h3>Red Pure Diesel Leaf</h3>
@@ -798,7 +968,7 @@
       </div>
 
       <div class="pairing-card">
-        <div class="pairing-img">&#x1F9AA;</div>
+        <div class="pairing-img"><img src="assets/diesel-torch-sensation.png" alt="Diesel Torch Sensation"></div>
         <div class="pairing-content">
           <div class="pairing-num">No. 5 &mdash; $10</div>
           <h3>Diesel Torch Sensation</h3>
@@ -812,7 +982,7 @@
       </div>
 
       <div class="pairing-card">
-        <div class="pairing-img">&#x1F35A;</div>
+        <div class="pairing-img"><img src="assets/ancient-diesel-fried-rice.png" alt="Ancient Diesel Fried Rice"></div>
         <div class="pairing-content">
           <div class="pairing-num">No. 6 &mdash; $10</div>
           <h3>Ancient Diesel Fried Rice</h3>
@@ -826,7 +996,7 @@
       </div>
 
       <div class="pairing-card">
-        <div class="pairing-img">&#x1FAA6;</div>
+        <div class="pairing-img"><img src="assets/diesel-ocean-comfort.png" alt="Diesel Ocean Comfort"></div>
         <div class="pairing-content">
           <div class="pairing-num">No. 7 &mdash; $10</div>
           <h3>Diesel Ocean Comfort</h3>
@@ -844,6 +1014,92 @@
 
   <div class="divider"></div>
 
+  <!-- ══ NUTRITION / CALORIES ══ -->
+  <section id="calories">
+    <p class="section-label">Know What You're Eating</p>
+    <h2 class="section-title">Fuel Check</h2>
+    <p class="section-subtitle">Estimated calories for every plate. All $10. No surprises.</p>
+
+    <div class="cal-table">
+      <div class="cal-row cal-header">
+        <span class="cal-cell cal-rank">#</span>
+        <span class="cal-cell cal-dish-name">Plate</span>
+        <span class="cal-cell cal-detail">Serving</span>
+        <span class="cal-cell cal-number">Est. Calories</span>
+        <span class="cal-cell cal-bar-head">Range</span>
+      </div>
+
+      <div class="cal-row cal-light">
+        <span class="cal-cell cal-rank">1</span>
+        <span class="cal-cell cal-dish-name">Diesel Torch Sensation</span>
+        <span class="cal-cell cal-detail">2 torched oysters</span>
+        <span class="cal-cell cal-number">~200&ndash;220</span>
+        <span class="cal-cell cal-bar-cell"><span class="cal-bar" style="width:22%;background:var(--herb);"></span></span>
+      </div>
+
+      <div class="cal-row cal-light">
+        <span class="cal-cell cal-rank">2</span>
+        <span class="cal-cell cal-dish-name">Red Pure Diesel Leaf</span>
+        <span class="cal-cell cal-detail">Tri-tip lettuce wraps</span>
+        <span class="cal-cell cal-number">~248&ndash;280</span>
+        <span class="cal-cell cal-bar-cell"><span class="cal-bar" style="width:28%;background:var(--herb);"></span></span>
+      </div>
+
+      <div class="cal-row cal-light">
+        <span class="cal-cell cal-rank">3</span>
+        <span class="cal-cell cal-dish-name">Diesel Counter Health</span>
+        <span class="cal-cell cal-detail">2 spring rolls</span>
+        <span class="cal-cell cal-number">~265&ndash;320</span>
+        <span class="cal-cell cal-bar-cell"><span class="cal-bar" style="width:32%;background:var(--herb);"></span></span>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-cell cal-rank">4</span>
+        <span class="cal-cell cal-dish-name">Diesel Ocean Comfort</span>
+        <span class="cal-cell cal-detail">1 bowl clams in broth</span>
+        <span class="cal-cell cal-number">~440&ndash;480</span>
+        <span class="cal-cell cal-bar-cell"><span class="cal-bar" style="width:48%;background:var(--brass);"></span></span>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-cell cal-rank">5</span>
+        <span class="cal-cell cal-dish-name">Pho Duoi</span>
+        <span class="cal-cell cal-detail">1 bowl noodle soup</span>
+        <span class="cal-cell cal-number">~575&ndash;645</span>
+        <span class="cal-cell cal-bar-cell"><span class="cal-bar" style="width:65%;background:var(--flame);"></span></span>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-cell cal-rank">6</span>
+        <span class="cal-cell cal-dish-name">Diesel Cure</span>
+        <span class="cal-cell cal-detail">1 pc chicken over rice</span>
+        <span class="cal-cell cal-number">~580&ndash;665</span>
+        <span class="cal-cell cal-bar-cell"><span class="cal-bar" style="width:67%;background:var(--flame);"></span></span>
+      </div>
+
+      <div class="cal-row">
+        <span class="cal-cell cal-rank">7</span>
+        <span class="cal-cell cal-dish-name">Ancient Diesel Fried Rice</span>
+        <span class="cal-cell cal-detail">1 bowl wok-fired rice</span>
+        <span class="cal-cell cal-number">~826&ndash;860</span>
+        <span class="cal-cell cal-bar-cell"><span class="cal-bar" style="width:86%;background:var(--red);"></span></span>
+      </div>
+    </div>
+
+    <div class="cal-legend">
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:var(--herb);"></span> Light (under 350 cal)</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:var(--brass);"></span> Balanced (350&ndash;550 cal)</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:var(--flame);"></span> Full Meal (550&ndash;700 cal)</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:var(--red);"></span> Comfort Bomb (700+ cal)</div>
+    </div>
+
+    <p style="font-size:0.75rem; color:rgba(245,240,232,0.3); margin-top:2rem; text-align:center;">
+      Estimates based on typical ingredient weights &amp; USDA data. Actual values may vary by preparation.
+    </p>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- ══ GALLERY ══ -->
   <section id="gallery">
     <p class="section-label">From Vince's Kitchen</p>
@@ -853,7 +1109,7 @@
     <div class="gallery-grid">
 
       <div class="gallery-item">
-        <span class="gallery-emoji">&#x1F96F;</span>
+        <img src="assets/diesel-counter-health.png" alt="Diesel Counter Health">
         <div class="gallery-overlay">
           <span>No. 1 &mdash; Diesel Counter Health</span>
           <h4>Spring Rolls + DH Sauce</h4>
@@ -861,7 +1117,7 @@
       </div>
 
       <div class="gallery-item gallery-wide">
-        <span class="gallery-emoji" style="font-size: 4rem;">&#x1F35C;</span>
+        <img src="assets/pho-duoi.png" alt="Pho Duoi">
         <div class="gallery-overlay">
           <span>No. 3 &mdash; Pho Duoi</span>
           <h4>Ancient Diesel Soup</h4>
@@ -869,7 +1125,7 @@
       </div>
 
       <div class="gallery-item">
-        <span class="gallery-emoji">&#x1F357;</span>
+        <img src="assets/diesel-cure.png" alt="Diesel Cure">
         <div class="gallery-overlay">
           <span>No. 2 &mdash; Diesel Cure</span>
           <h4>Ginger Chicken + DFG</h4>
@@ -877,7 +1133,7 @@
       </div>
 
       <div class="gallery-item">
-        <span class="gallery-emoji">&#x1F969;</span>
+        <img src="assets/red-pure-diesel-leaf.png" alt="Red Pure Diesel Leaf">
         <div class="gallery-overlay">
           <span>No. 4 &mdash; Red Pure Diesel Leaf</span>
           <h4>Tri-Tip Lettuce Wraps + DC</h4>
@@ -885,7 +1141,7 @@
       </div>
 
       <div class="gallery-item">
-        <span class="gallery-emoji">&#x1F9AA;</span>
+        <img src="assets/diesel-torch-sensation.png" alt="Diesel Torch Sensation">
         <div class="gallery-overlay">
           <span>No. 5 &mdash; Torch Sensation</span>
           <h4>Torched Oysters + DC</h4>
@@ -893,7 +1149,7 @@
       </div>
 
       <div class="gallery-item gallery-wide">
-        <span class="gallery-emoji" style="font-size: 4rem;">&#x1F35A;</span>
+        <img src="assets/ancient-diesel-fried-rice.png" alt="Ancient Diesel Fried Rice">
         <div class="gallery-overlay">
           <span>No. 6 &mdash; Ancient Diesel</span>
           <h4>Fried Rice + Sriracha</h4>
@@ -901,7 +1157,7 @@
       </div>
 
       <div class="gallery-item">
-        <span class="gallery-emoji">&#xFAA6;</span>
+        <img src="assets/diesel-ocean-comfort.png" alt="Diesel Ocean Comfort">
         <div class="gallery-overlay">
           <span>No. 7 &mdash; Ocean Comfort</span>
           <h4>Clams in Broth</h4>
@@ -909,15 +1165,15 @@
       </div>
 
       <div class="gallery-item">
-        <span class="gallery-emoji">&#x1F336;&#xFE0F;</span>
+        <img src="assets/dc-final.png" alt="Diesel Chili Sauce">
         <div class="gallery-overlay">
           <span>The Sauce Family</span>
-          <h4>DC &middot; DH &middot; DFG &middot; DF &middot; DP</h4>
+          <h4>Diesel Chili (DC)</h4>
         </div>
       </div>
 
       <div class="gallery-item">
-        <span class="gallery-emoji">&#x1F9C4;</span>
+        <img src="assets/dfg-final.png" alt="Diesel Fish-Garlic">
         <div class="gallery-overlay">
           <span>Diesel Fish-Garlic</span>
           <h4>Tons of Garlic. No Apologies.</h4>
@@ -925,10 +1181,10 @@
       </div>
 
       <div class="gallery-item">
-        <span class="gallery-emoji">&#x1F95C;</span>
+        <img src="assets/dp-final.png" alt="Diesel Peanut Sauce">
         <div class="gallery-overlay">
           <span>Diesel Peanut Sauce</span>
-          <h4>Savory, Nutty, Chunky</h4>
+          <h4>Rich. Nutty. Savory.</h4>
         </div>
       </div>
 
@@ -1003,7 +1259,7 @@
       <a href="#">TikTok</a>
       <a href="#">Yelp</a>
     </div>
-    <p>&copy; 2026 Diesel Delights by Vince. Sacramento, CA. All rights reserved.</p>
+    <p>&copy; 2026 Diesel Delights Vince Creations. Sacramento, CA. All rights reserved.</p>
   </footer>
 
 </body>
