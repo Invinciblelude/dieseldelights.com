@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diesel Delights by Vince — Sacramento</title>
+  <meta name="description" content="Diesel Delights by Vince. Vietnamese roots. Firehouse soul. Signature plates cooked Vince's way in Natomas, Sacramento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #1A1A1A;
+      --black-light: #222222;
+      --flame: #E8600A;
+      --flame-dark: #C24E08;
+      --bone: #F5F0E8;
+      --charcoal: #3D3D3D;
+      --herb: #4A7C59;
+      --brass: #C9A84C;
+      --ocean: #3A7CA5;
+      --red: #C0392B;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--black);
+      color: var(--bone);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(26,26,26,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(232,96,10,0.15);
+    }
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 1.4rem;
+      text-transform: uppercase; letter-spacing: 2px; color: var(--bone);
+    }
+    .nav-logo span { color: var(--flame); }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      color: var(--bone); text-decoration: none;
+      font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--flame); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      align-items: center; text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(232,96,10,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.05) 0%, transparent 50%),
+        var(--black);
+    }
+    .hero-tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem; color: var(--flame);
+      margin-bottom: 1rem; letter-spacing: 1px;
+    }
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: clamp(3.5rem, 10vw, 7rem);
+      text-transform: uppercase; line-height: 0.95;
+      letter-spacing: 3px; margin-bottom: 0.5rem;
+    }
+    .hero h1 .flame { color: var(--flame); }
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 1.2rem;
+      text-transform: uppercase; letter-spacing: 4px;
+      color: var(--brass); margin-bottom: 2rem;
+    }
+    .hero-slogan {
+      font-size: 1.1rem; color: rgba(245,240,232,0.7);
+      max-width: 500px; margin-bottom: 3rem;
+    }
+    .hero-cta {
+      display: inline-block; padding: 1rem 2.5rem;
+      background: var(--flame); color: var(--bone);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      text-transform: uppercase; letter-spacing: 2px;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .hero-cta:hover { background: var(--flame-dark); transform: translateY(-2px); }
+    .scroll-hint {
+      position: absolute; bottom: 2rem;
+      font-size: 0.75rem; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(245,240,232,0.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Caveat', cursive;
+      color: var(--flame); font-size: 1.1rem; margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 2.8rem;
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 0.75rem; line-height: 1.1;
+    }
+    .section-subtitle {
+      color: rgba(245,240,232,0.55); font-size: 1.05rem;
+      max-width: 640px; margin-bottom: 2.5rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-content {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: start;
+    }
+    .about-text p {
+      margin-bottom: 1.2rem;
+      color: rgba(245,240,232,0.85); font-size: 1.05rem;
+    }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; padding-top: 1rem;
+    }
+    .stat { border-left: 3px solid var(--flame); padding-left: 1rem; }
+    .stat-number {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 2.5rem;
+      color: var(--flame); line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.85rem; color: rgba(245,240,232,0.6);
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* ── MENU GRID ── */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .menu-card {
+      background: rgba(245,240,232,0.04);
+      border: 1px solid rgba(245,240,232,0.08);
+      padding: 2rem;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .menu-card:hover {
+      border-color: var(--flame); transform: translateY(-3px);
+    }
+    .menu-card-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 0.75rem;
+      text-transform: uppercase; letter-spacing: 2px;
+      color: var(--flame); margin-bottom: 0.75rem;
+    }
+    .menu-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.4rem;
+      text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .menu-card p {
+      font-size: 0.9rem; color: rgba(245,240,232,0.65); line-height: 1.5;
+    }
+    .menu-card .price {
+      display: inline-block; margin-top: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; color: var(--brass); font-size: 1.1rem;
+    }
+
+    /* ── SAUCE SECTION ── */
+    .sauce-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .sauce-card {
+      position: relative; overflow: hidden;
+      border: 1px solid rgba(245,240,232,0.08);
+      background: linear-gradient(145deg, rgba(245,240,232,0.05) 0%, rgba(26,26,26,0.95) 100%);
+      padding: 0; transition: transform 0.3s, border-color 0.3s;
+    }
+    .sauce-card:hover { transform: translateY(-4px); border-color: var(--flame); }
+    .sauce-card-header {
+      position: relative; padding: 2rem 2rem 1.5rem;
+      background-size: cover; background-position: center;
+    }
+    .sauce-card-header::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(26,26,26,0.3), rgba(26,26,26,0.95));
+    }
+    .sauce-card-header > * { position: relative; z-index: 1; }
+    .sauce-emoji {
+      font-size: 2.8rem; margin-bottom: 0.5rem; display: block;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    }
+    .sauce-badge {
+      display: inline-block;
+      padding: 0.25rem 0.7rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 0.65rem;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      border-radius: 2px; margin-bottom: 0.75rem;
+    }
+    .badge-spicy { background: var(--red); color: #fff; }
+    .badge-savory { background: var(--brass); color: var(--black); }
+    .badge-fresh { background: var(--herb); color: #fff; }
+    .badge-nutty { background: #8B6914; color: #fff; }
+    .badge-clean { background: var(--ocean); color: #fff; }
+    .sauce-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 1.5rem;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 0.2rem;
+    }
+    .sauce-card .sauce-code {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.8rem;
+      color: var(--flame); letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .sauce-card-body { padding: 1.5rem 2rem 2rem; }
+    .sauce-card-body p {
+      font-size: 0.9rem; color: rgba(245,240,232,0.7);
+      line-height: 1.55; margin-bottom: 1rem;
+    }
+    .sauce-ingredients {
+      list-style: none; padding: 0;
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .sauce-ingredients li {
+      padding: 0.3rem 0.7rem;
+      background: rgba(245,240,232,0.06);
+      border: 1px solid rgba(245,240,232,0.1);
+      font-size: 0.75rem; color: rgba(245,240,232,0.6);
+      font-weight: 500; letter-spacing: 0.5px;
+    }
+    .sauce-paired {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem; text-transform: uppercase;
+      letter-spacing: 1px; color: rgba(245,240,232,0.45);
+    }
+    .sauce-paired strong { color: var(--brass); }
+
+    /* ── PAIRINGS SECTION ── */
+    .pairings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+      gap: 2rem;
+    }
+    .pairing-card {
+      display: grid; grid-template-columns: 140px 1fr;
+      background: rgba(245,240,232,0.03);
+      border: 1px solid rgba(245,240,232,0.07);
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .pairing-card:hover { border-color: var(--flame); transform: translateY(-2px); }
+    .pairing-img {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, rgba(232,96,10,0.12), rgba(201,168,76,0.08));
+    }
+    .pairing-content { padding: 1.5rem; }
+    .pairing-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 0.7rem;
+      color: var(--flame); letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 0.25rem;
+    }
+    .pairing-content h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.3rem;
+      text-transform: uppercase; margin-bottom: 0.25rem;
+    }
+    .pairing-dish {
+      font-size: 0.85rem; color: rgba(245,240,232,0.5);
+      margin-bottom: 0.6rem; font-style: italic;
+    }
+    .pairing-arrow {
+      display: flex; align-items: center; gap: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+    .pairing-arrow .arrow {
+      color: var(--flame); font-weight: 700;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+    .pairing-sauce-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      color: var(--brass); text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .pairing-why {
+      font-size: 0.82rem; color: rgba(245,240,232,0.55);
+      line-height: 1.5;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden;
+      aspect-ratio: 1; cursor: pointer;
+      background: linear-gradient(135deg, rgba(232,96,10,0.08), rgba(201,168,76,0.06));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gallery-item .gallery-emoji {
+      font-size: 3rem;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover .gallery-emoji { transform: scale(1.15); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,26,26,0.9) 0%, transparent 60%);
+      display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 1rem;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 0.9rem;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .gallery-overlay span {
+      font-size: 0.7rem; color: var(--flame);
+      font-family: 'Barlow Condensed', sans-serif;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .gallery-wide { grid-column: span 2; aspect-ratio: 2/1; }
+
+    /* ── TIMELINE ── */
+    .timeline { position: relative; padding-left: 3rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--flame), var(--brass), var(--herb));
+    }
+    .timeline-item { position: relative; margin-bottom: 3rem; }
+    .timeline-item::before {
+      content: ''; position: absolute;
+      left: -3.45rem; top: 0.5rem;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--flame); border: 2px solid var(--black);
+    }
+    .timeline-item h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.3rem;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 0.3rem;
+    }
+    .timeline-item p {
+      color: rgba(245,240,232,0.7); font-size: 0.95rem; max-width: 600px;
+    }
+
+    /* ── LOCATION ── */
+    .location-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: start;
+    }
+    .location-details h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.2rem;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 0.5rem; color: var(--bone);
+    }
+    .location-details p { color: rgba(245,240,232,0.7); margin-bottom: 1.5rem; }
+    .location-map {
+      width: 100%; aspect-ratio: 4/3;
+      background: rgba(245,240,232,0.05);
+      border: 1px solid rgba(245,240,232,0.1);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 4rem 2rem;
+      border-top: 1px solid rgba(245,240,232,0.08); margin-top: 2rem;
+    }
+    footer .logo-big {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 2rem;
+      text-transform: uppercase; letter-spacing: 3px; margin-bottom: 0.5rem;
+    }
+    footer .logo-big span { color: var(--flame); }
+    footer .footer-slogan {
+      font-family: 'Caveat', cursive;
+      color: var(--brass); font-size: 1.2rem; margin-bottom: 1.5rem;
+    }
+    footer p { font-size: 0.8rem; color: rgba(245,240,232,0.35); }
+    .social-links {
+      display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .social-links a {
+      color: rgba(245,240,232,0.5); text-decoration: none;
+      font-size: 0.85rem; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    .social-links a:hover { color: var(--flame); }
+
+    /* ── DIVIDER ── */
+    .divider { width: 60px; height: 3px; background: var(--flame); margin: 3rem auto; }
+
+    /* ── SAUCE KEY BAR ── */
+    .sauce-key {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 1.5rem; padding: 1.5rem 2rem;
+      background: rgba(245,240,232,0.03);
+      border: 1px solid rgba(245,240,232,0.06);
+      margin-bottom: 2.5rem;
+    }
+    .sauce-key-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.8rem; color: rgba(245,240,232,0.6);
+    }
+    .sauce-key-dot {
+      width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0;
+    }
+    .sauce-key-item strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; color: var(--bone);
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .about-content { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .location-grid { grid-template-columns: 1fr; }
+      .menu-grid, .sauce-grid { grid-template-columns: 1fr; }
+      .pairings-grid { grid-template-columns: 1fr; }
+      .pairing-card { grid-template-columns: 100px 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-wide { grid-column: span 2; }
+      section { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav>
+    <div class="nav-logo">Diesel <span>Delights</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#sauces">Sauces</a></li>
+      <li><a href="#pairings">Pairings</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <p class="hero-tagline">by Vince</p>
+    <h1>Diesel<br><span class="flame">Delights</span></h1>
+    <p class="hero-sub">Turn the gas up.</p>
+    <p class="hero-slogan">Vietnamese roots. Firehouse soul. Signature plates cooked Vince's way in Natomas, Sacramento.</p>
+    <a href="#menu" class="hero-cta">See the Menu</a>
+    <p class="scroll-hint">Scroll</p>
+  </header>
+
+  <!-- ══ ABOUT ══ -->
+  <section id="about">
+    <p class="section-label">Who's Cooking</p>
+    <h2 class="section-title">About Vince</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Vince grew up watching his Vietnamese family cook with soul &mdash; big pots, loud flavors, everybody eating. He carried that into 15+ years of feeding firefighter crews who needed real food after real calls.</p>
+        <p>Diesel Delights is where the family table meets the firehouse stove: signature plates cooked Vince's way, every single time. No copies. No shortcuts. Just food that hits like home.</p>
+        <p>Before the restaurant, there was the food trailer &mdash; and before that, years on the line at Wayside Noodles, Pete Teriyaki, and every hustle in between. All of it sharpened the instinct that shows up on every plate.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years feeding firefighters</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">7</div>
+          <div class="stat-label">Diesel Signatures</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">5</div>
+          <div class="stat-label">House sauces</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Shortcuts</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ MENU ══ -->
+  <section id="menu">
+    <p class="section-label">The Big 7</p>
+    <h2 class="section-title">Diesel Signatures</h2>
+    <p class="section-subtitle">Seven plates. Every one a signature. Every one cooked Vince's way. No filler. No copies. Just food that hits.</p>
+    <div style="display:inline-block; padding: 0.8rem 2rem; background: var(--flame); margin-bottom: 2.5rem;">
+      <span style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1.6rem; text-transform:uppercase; letter-spacing:3px; color:var(--bone);">Every Plate $10</span>
+    </div>
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <div class="menu-card-label">No. 1 &mdash; Fresh Start</div>
+        <h3>Diesel Counter Health</h3>
+        <p>2 fresh spring rolls (shrimp or pork) packed with herbs and crunch. Paired with Diesel Hoisin (DH) &mdash; sweet, tangy, garlic.</p>
+        <span class="price">$10</span>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-label">No. 2 &mdash; The Healer</div>
+        <h3>Diesel Cure</h3>
+        <p>1 piece ginger-loaded chicken over hot jasmine rice with pickled veg and herbs. Drizzled with Diesel Fish-Garlic &mdash; tons of garlic, pepper, and punch.</p>
+        <span class="price">$10</span>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-label">No. 3 &mdash; The Old Soul</div>
+        <h3>Pho Duoi</h3>
+        <p>Ancient Diesel Soup. 1 bowl &mdash; deep house broth, 12+ hours in the pot, your choice of protein. Served classic with hoisin and sriracha.</p>
+        <span class="price">$10</span>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-label">No. 4 &mdash; Red Meat Hit</div>
+        <h3>Red Pure Diesel Leaf</h3>
+        <p>Sliced tri-tip in fresh lettuce wraps with Diesel Chili (DC) &mdash; cilantro, lime, sriracha. Pickled veg, herbs, jalape&ntilde;o.</p>
+        <span class="price">$10</span>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-label">No. 5 &mdash; The Showpiece</div>
+        <h3>Diesel Torch Sensation</h3>
+        <p>2 oysters torched with butter, garlic, and chili. Served with Diesel Chili (DC) on the side. Order more in 2-piece sets.</p>
+        <span class="price">$10</span>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-label">No. 6 &mdash; Comfort Bomb</div>
+        <h3>Ancient Diesel Fried Rice</h3>
+        <p>1 bowl smoky wok-fired rice with Chinese sausage, shrimp, egg, and mixed veg. Sriracha on the side &mdash; that's all it needs.</p>
+        <span class="price">$10</span>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-label">No. 7 &mdash; Ocean Soul</div>
+        <h3>Diesel Ocean Comfort</h3>
+        <p>1 bowl clams steamed in garlicky ginger broth with lemongrass and chili. No sauce needed &mdash; the broth does all the work.</p>
+        <span class="price">$10</span>
+      </div>
+
+      <div class="menu-card" style="border-color: var(--brass); background: rgba(201,168,76,0.05);">
+        <div class="menu-card-label" style="color: var(--brass);">Premium Night</div>
+        <h3>The Vince Experience</h3>
+        <p>Limited seats. Set menu. 5 courses with pairings. This is where Michelin Vince lives &mdash; inside Diesel Delights.</p>
+        <span class="price">$55 &ndash; $75 / person</span>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ SAUCE FAMILY ══ -->
+  <section id="sauces">
+    <p class="section-label">The Flavor DNA</p>
+    <h2 class="section-title">Diesel Sauce Family</h2>
+    <p class="section-subtitle">Five house sauces built by Vince. Each one assigned to its plate. This is what makes Diesel Delights taste like Diesel Delights &mdash; nowhere else.</p>
+
+    <div class="sauce-key">
+      <div class="sauce-key-item">
+        <div class="sauce-key-dot" style="background: var(--red);"></div>
+        <strong>DC</strong> Diesel Chili
+      </div>
+      <div class="sauce-key-item">
+        <div class="sauce-key-dot" style="background: var(--brass);"></div>
+        <strong>DH</strong> Diesel Hoisin
+      </div>
+      <div class="sauce-key-item">
+        <div class="sauce-key-dot" style="background: var(--flame);"></div>
+        <strong>DFG</strong> Fish-Garlic
+      </div>
+      <div class="sauce-key-item">
+        <div class="sauce-key-dot" style="background: var(--ocean);"></div>
+        <strong>DF</strong> Diesel Fish
+      </div>
+      <div class="sauce-key-item">
+        <div class="sauce-key-dot" style="background: #8B6914;"></div>
+        <strong>DP</strong> Diesel Peanut
+      </div>
+    </div>
+
+    <div class="sauce-grid">
+
+      <!-- DC -->
+      <div class="sauce-card">
+        <div class="sauce-card-header">
+          <span class="sauce-emoji">&#x1F336;&#xFE0F;</span>
+          <span class="sauce-badge badge-spicy">Bright &amp; Spicy</span>
+          <h3>Diesel Chili Sauce</h3>
+          <span class="sauce-code">DC</span>
+        </div>
+        <div class="sauce-card-body">
+          <p>Fish-sauce based green chili sauce with cilantro, lime, and sriracha. Bright, fresh, and punchy &mdash; cuts through rich, fatty, smoky proteins like a blade.</p>
+          <ul class="sauce-ingredients">
+            <li>Fish Sauce</li>
+            <li>Cilantro</li>
+            <li>Green Onion</li>
+            <li>Lime Juice</li>
+            <li>Sriracha</li>
+            <li>Sugar</li>
+          </ul>
+          <p class="sauce-paired">Paired with <strong>Red Pure Diesel Leaf</strong> &amp; <strong>Diesel Torch Sensation</strong></p>
+        </div>
+      </div>
+
+      <!-- DFG -->
+      <div class="sauce-card">
+        <div class="sauce-card-header">
+          <span class="sauce-emoji">&#x1F9C4;</span>
+          <span class="sauce-badge badge-savory">Garlic Bomb</span>
+          <h3>Diesel Fish-Garlic</h3>
+          <span class="sauce-code">DFG</span>
+        </div>
+        <div class="sauce-card-body">
+          <p>An aggressive, garlic-loaded fish sauce drizzle built specifically for the Diesel Cure. So much garlic it hits you from three feet away. Pepper-heavy, salty-sweet, no apologies.</p>
+          <ul class="sauce-ingredients">
+            <li>Fish Sauce</li>
+            <li>Tons of Garlic</li>
+            <li>Black Pepper</li>
+            <li>Sugar</li>
+            <li>Salt</li>
+          </ul>
+          <p class="sauce-paired">Paired with <strong>Diesel Cure</strong> (Ginger Chicken)</p>
+        </div>
+      </div>
+
+      <!-- DH -->
+      <div class="sauce-card">
+        <div class="sauce-card-header">
+          <span class="sauce-emoji">&#x1F36F;</span>
+          <span class="sauce-badge badge-savory">Sweet &amp; Tangy</span>
+          <h3>Diesel Hoisin</h3>
+          <span class="sauce-code">DH</span>
+        </div>
+        <div class="sauce-card-body">
+          <p>Vince's clean, bright hoisin &mdash; not the thick, dark, store-bought kind. Built from vinegar, garlic, and sugar. The friendly, dippable one everybody reaches for.</p>
+          <ul class="sauce-ingredients">
+            <li>Rice Vinegar</li>
+            <li>Garlic</li>
+            <li>Water</li>
+            <li>Salt</li>
+            <li>Sugar</li>
+          </ul>
+          <p class="sauce-paired">Paired with <strong>Diesel Counter Health</strong> (Spring Rolls)</p>
+        </div>
+      </div>
+
+      <!-- DF -->
+      <div class="sauce-card">
+        <div class="sauce-card-header">
+          <span class="sauce-emoji">&#x1F4A7;</span>
+          <span class="sauce-badge badge-clean">Clean &amp; Sharp</span>
+          <h3>Diesel Fish Sauce</h3>
+          <span class="sauce-code">DF</span>
+        </div>
+        <div class="sauce-card-body">
+          <p>Clear, sharp, all-purpose nuoc cham-style sauce. Tangy, slightly sweet, with garlic bite and pepper finish. The base layer of the Diesel flavor system.</p>
+          <ul class="sauce-ingredients">
+            <li>Rice Vinegar</li>
+            <li>Salt</li>
+            <li>Sugar</li>
+            <li>Water</li>
+            <li>Garlic</li>
+            <li>Black Pepper</li>
+          </ul>
+          <p class="sauce-paired">Available as <strong>extra with any plate</strong></p>
+        </div>
+      </div>
+
+      <!-- DP -->
+      <div class="sauce-card">
+        <div class="sauce-card-header">
+          <span class="sauce-emoji">&#x1F95C;</span>
+          <span class="sauce-badge badge-nutty">Rich &amp; Nutty</span>
+          <h3>Diesel Peanut Sauce</h3>
+          <span class="sauce-code">DP</span>
+        </div>
+        <div class="sauce-card-body">
+          <p>Fish-sauce based peanut dip &mdash; not sweet like Thai peanut sauce. Savory, nutty, with body from the oil and depth from the fish sauce. Chunky peanut texture.</p>
+          <ul class="sauce-ingredients">
+            <li>Peanuts</li>
+            <li>Fish Sauce</li>
+            <li>Oil</li>
+            <li>Salt</li>
+            <li>Sugar</li>
+          </ul>
+          <p class="sauce-paired">Optional extra for <strong>Diesel Counter Health</strong> (Spring Rolls)</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ DISH + SAUCE PAIRINGS ══ -->
+  <section id="pairings">
+    <p class="section-label">Every Plate Has Its Match</p>
+    <h2 class="section-title">Dish &times; Sauce Pairings</h2>
+    <p class="section-subtitle">Each of the Big 7 is locked to its sauce. No guessing, no clutter &mdash; Vince already decided what works.</p>
+
+    <div class="pairings-grid">
+
+      <div class="pairing-card">
+        <div class="pairing-img">&#x1F96F;</div>
+        <div class="pairing-content">
+          <div class="pairing-num">No. 1 &mdash; $10</div>
+          <h3>Diesel Counter Health</h3>
+          <div class="pairing-dish">2 Spring Rolls (shrimp or pork)</div>
+          <div class="pairing-arrow">
+            <span class="arrow">&xrarr;</span>
+            <span class="pairing-sauce-name">Diesel Hoisin (DH)</span>
+          </div>
+          <div class="pairing-why">Sweet, tangy, garlic. The friendly dipper that lets the fresh herbs and crunch shine through.</div>
+        </div>
+      </div>
+
+      <div class="pairing-card">
+        <div class="pairing-img">&#x1F357;</div>
+        <div class="pairing-content">
+          <div class="pairing-num">No. 2 &mdash; $10</div>
+          <h3>Diesel Cure</h3>
+          <div class="pairing-dish">1 piece Ginger Chicken over Rice</div>
+          <div class="pairing-arrow">
+            <span class="arrow">&xrarr;</span>
+            <span class="pairing-sauce-name">Diesel Fish-Garlic (DFG)</span>
+          </div>
+          <div class="pairing-why">Fish sauce loaded with tons of garlic, pepper, salt, and sugar. Hits you from three feet away. Meant to punch through hot rice and ginger.</div>
+        </div>
+      </div>
+
+      <div class="pairing-card">
+        <div class="pairing-img">&#x1F35C;</div>
+        <div class="pairing-content">
+          <div class="pairing-num">No. 3 &mdash; $10</div>
+          <h3>Pho Duoi</h3>
+          <div class="pairing-dish">1 bowl &mdash; Ancient Diesel Soup</div>
+          <div class="pairing-arrow">
+            <span class="arrow">&xrarr;</span>
+            <span class="pairing-sauce-name">Hoisin + Sriracha (Classic)</span>
+          </div>
+          <div class="pairing-why">The broth is Vince's masterpiece &mdash; 12+ hours of depth. Served classic pho style with hoisin and sriracha on the side. Respect the tradition.</div>
+        </div>
+      </div>
+
+      <div class="pairing-card">
+        <div class="pairing-img">&#x1F969;</div>
+        <div class="pairing-content">
+          <div class="pairing-num">No. 4 &mdash; $10</div>
+          <h3>Red Pure Diesel Leaf</h3>
+          <div class="pairing-dish">Tri-Tip Lettuce Wraps</div>
+          <div class="pairing-arrow">
+            <span class="arrow">&xrarr;</span>
+            <span class="pairing-sauce-name">Diesel Chili (DC)</span>
+          </div>
+          <div class="pairing-why">Bright cilantro, lime, and sriracha cut right through the rich, charred beef. The green hits the red.</div>
+        </div>
+      </div>
+
+      <div class="pairing-card">
+        <div class="pairing-img">&#x1F9AA;</div>
+        <div class="pairing-content">
+          <div class="pairing-num">No. 5 &mdash; $10</div>
+          <h3>Diesel Torch Sensation</h3>
+          <div class="pairing-dish">2 Torched Oysters (order more in 2s)</div>
+          <div class="pairing-arrow">
+            <span class="arrow">&xrarr;</span>
+            <span class="pairing-sauce-name">Diesel Chili (DC)</span>
+          </div>
+          <div class="pairing-why">After the torch char, butter, and garlic, the DC sauce adds a fresh, herby, spicy layer that makes each oyster a full experience.</div>
+        </div>
+      </div>
+
+      <div class="pairing-card">
+        <div class="pairing-img">&#x1F35A;</div>
+        <div class="pairing-content">
+          <div class="pairing-num">No. 6 &mdash; $10</div>
+          <h3>Ancient Diesel Fried Rice</h3>
+          <div class="pairing-dish">1 bowl Wok-Fired Rice</div>
+          <div class="pairing-arrow">
+            <span class="arrow">&xrarr;</span>
+            <span class="pairing-sauce-name">Sriracha</span>
+          </div>
+          <div class="pairing-why">The wok hei, Chinese sausage, and shrimp already carry the flavor. Sriracha on the side is all it needs &mdash; keep it simple.</div>
+        </div>
+      </div>
+
+      <div class="pairing-card">
+        <div class="pairing-img">&#x1FAA6;</div>
+        <div class="pairing-content">
+          <div class="pairing-num">No. 7 &mdash; $10</div>
+          <h3>Diesel Ocean Comfort</h3>
+          <div class="pairing-dish">1 bowl Clams in Ginger-Garlic Broth</div>
+          <div class="pairing-arrow">
+            <span class="arrow">&xrarr;</span>
+            <span class="pairing-sauce-name">No Sauce Needed</span>
+          </div>
+          <div class="pairing-why">The garlicky, ginger-lemongrass broth IS the sauce. Soak your bread in it, pour it over rice, drink it straight. It does all the work.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ GALLERY ══ -->
+  <section id="gallery">
+    <p class="section-label">From Vince's Kitchen</p>
+    <h2 class="section-title">The Plates</h2>
+    <p class="section-subtitle">Every photo is from the kitchen &mdash; same recipes, same flavors, same Vince.</p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <span class="gallery-emoji">&#x1F96F;</span>
+        <div class="gallery-overlay">
+          <span>No. 1 &mdash; Diesel Counter Health</span>
+          <h4>Spring Rolls + DH Sauce</h4>
+        </div>
+      </div>
+
+      <div class="gallery-item gallery-wide">
+        <span class="gallery-emoji" style="font-size: 4rem;">&#x1F35C;</span>
+        <div class="gallery-overlay">
+          <span>No. 3 &mdash; Pho Duoi</span>
+          <h4>Ancient Diesel Soup</h4>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <span class="gallery-emoji">&#x1F357;</span>
+        <div class="gallery-overlay">
+          <span>No. 2 &mdash; Diesel Cure</span>
+          <h4>Ginger Chicken + DFG</h4>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <span class="gallery-emoji">&#x1F969;</span>
+        <div class="gallery-overlay">
+          <span>No. 4 &mdash; Red Pure Diesel Leaf</span>
+          <h4>Tri-Tip Lettuce Wraps + DC</h4>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <span class="gallery-emoji">&#x1F9AA;</span>
+        <div class="gallery-overlay">
+          <span>No. 5 &mdash; Torch Sensation</span>
+          <h4>Torched Oysters + DC</h4>
+        </div>
+      </div>
+
+      <div class="gallery-item gallery-wide">
+        <span class="gallery-emoji" style="font-size: 4rem;">&#x1F35A;</span>
+        <div class="gallery-overlay">
+          <span>No. 6 &mdash; Ancient Diesel</span>
+          <h4>Fried Rice + Sriracha</h4>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <span class="gallery-emoji">&#xFAA6;</span>
+        <div class="gallery-overlay">
+          <span>No. 7 &mdash; Ocean Comfort</span>
+          <h4>Clams in Broth</h4>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <span class="gallery-emoji">&#x1F336;&#xFE0F;</span>
+        <div class="gallery-overlay">
+          <span>The Sauce Family</span>
+          <h4>DC &middot; DH &middot; DFG &middot; DF &middot; DP</h4>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <span class="gallery-emoji">&#x1F9C4;</span>
+        <div class="gallery-overlay">
+          <span>Diesel Fish-Garlic</span>
+          <h4>Tons of Garlic. No Apologies.</h4>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <span class="gallery-emoji">&#x1F95C;</span>
+        <div class="gallery-overlay">
+          <span>Diesel Peanut Sauce</span>
+          <h4>Savory, Nutty, Chunky</h4>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ STORY ══ -->
+  <section id="story">
+    <p class="section-label">The Journey</p>
+    <h2 class="section-title">Vince's Road</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>The Family Kitchen</h3>
+        <p>Grew up in a Vietnamese household where the stove was always on. Fish sauce, lemongrass, and charred meats were the background of every day. Absorbed it all before he ever picked up a knife himself.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>The Restaurant Grind</h3>
+        <p>Ran the line at Wayside Noodles, Pete Teriyaki, and every hustle in between. Learned how to feed a neighborhood every night and still keep the food honest.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>The Firehouse</h3>
+        <p>15+ years cooking for brothers and sisters in the fire service. No room for weak plates. That pressure shaped everything: big flavors, hot plates, real portions, and the kind of care that says &ldquo;I got you.&rdquo;</p>
+      </div>
+      <div class="timeline-item">
+        <h3>The Trailer</h3>
+        <p>First time Vince put his own name behind his own food. The &ldquo;Vince's way&rdquo; signatures started here: Vietnamese roots with a chef's touch, comfort food with an edge.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Diesel Delights</h3>
+        <p>The brick-and-mortar chapter. Every dish is a signature or it doesn't make the menu. This is where the family table, the firehouse stove, and the trailer hustle all collide into one kitchen.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ LOCATION ══ -->
+  <section id="location">
+    <p class="section-label">Pull Up</p>
+    <h2 class="section-title">Find Us</h2>
+    <div class="location-grid">
+      <div class="location-details">
+        <h3>Address</h3>
+        <p>4261 Truxel Rd, Suite A7<br>Sacramento, CA 95834</p>
+        <h3>Neighborhood</h3>
+        <p>Natomas Marketplace &mdash; right off I-80 and Truxel. High energy, high traffic, big appetite zone.</p>
+        <h3>Hours</h3>
+        <p>Coming soon &mdash; follow us on Instagram for opening updates.</p>
+        <h3>Contact</h3>
+        <p>Instagram: @dieseldelightssac<br>TikTok: @dieseldelights</p>
+      </div>
+      <div class="location-map">
+        <iframe
+          width="100%" height="100%"
+          style="border:0; min-height: 350px;"
+          loading="lazy" allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3116.5!2d-121.505!3d38.6425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z4261+Truxel+Rd+Sacramento+CA!5e0!3m2!1sen!2sus!4v1">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="logo-big">Diesel <span>Delights</span></div>
+    <div class="footer-slogan">Turn the gas up.</div>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Yelp</a>
+    </div>
+    <p>&copy; 2026 Diesel Delights by Vince. Sacramento, CA. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
