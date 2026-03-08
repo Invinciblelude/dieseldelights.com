@@ -9,7 +9,7 @@
 
 | Dish | Paired With |
 |------|------------|
-| **Diesel Counter Health** — 2 rolls, $8 | Diesel Hoisin (DH) |
+| **Diesel Counter Health** — 2 rolls, $10 | Diesel Hoisin (DH) |
 | **Diesel Cure** — 1 pc chicken/rice, $10 | Diesel Fish-Garlic Sauce |
 | **Pho Duoi** — 1 bowl, $10 | Regular hoisin + sriracha (classic) |
 | **Red Pure Diesel Leaf** — lettuce wraps, $10 | Diesel Chili Sauce (DC) |

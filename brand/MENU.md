@@ -11,7 +11,7 @@ and Vince's fingerprint. They're tied together by five house sauces — Diesel
 Chili (DC), Diesel Hoisin (DH), Diesel Fish-Garlic, Diesel Fish Sauce, and
 Diesel Peanut Sauce — each assigned to its plate. No guessing, no clutter.
 
-**$10 per plate (spring rolls $8).** Simple pricing. Pull up, pick your
+**Every plate is $10.** One price. No confusion. Pull up, pick your
 signature, eat. Fast ordering, insane value for chef-level food.
 
 ---
@@ -29,7 +29,7 @@ your body as much as your cravings.
 |--------|------|
 | **Category** | Starter / Light |
 | **Serving** | 2 rolls (shrimp or pork) |
-| **Price** | $8 |
+| **Price** | $10 |
 | **Paired Sauce** | Diesel Hoisin (DH) — sweet, tangy, garlic |
 | **Key Prep** | Fresh rolls, no frying — herbs, rice paper, proteins |
 | **Vince's Touch** | Extra herbs, tighter roll, balanced shrimp-to-pork ratio |
@@ -210,7 +210,7 @@ inside Diesel Delights, not instead of it.
 
 ## Pricing Philosophy
 
-**$10/plate, spring rolls $8.** Simple, clean, fast.
+**$10/plate. Every plate. Simple, clean, fast.**
 
 | Why This Works | |
 |----------------|---|
@@ -223,7 +223,7 @@ inside Diesel Delights, not instead of it.
 | Scenario | Target Check | What They Order |
 |----------|-------------|-----------------|
 | Lunch solo | $10 – $13 | 1 plate + drink |
-| Quick starter + main | $18 – $21 | Rolls ($8) + 1 plate ($10) + drink |
+| Quick starter + main | $20 – $23 | Rolls + 1 plate + drink |
 | Dinner for two | $25 – $30 | 2 plates + rolls + drinks |
 | Group of four | $45 – $55 | 4 plates + rolls + drinks |
 | Date night | $30 – $40 | Rolls + oysters + 1 plate + drinks |
@@ -243,7 +243,7 @@ delivering ten times the soul. That's how you build a line out the door.
 ╠══════════════════════════════════════════════════════╣
 ║                                                      ║
 ║                                                      ║
-║  1  DIESEL COUNTER HEALTH                     $8     ║
+║  1  DIESEL COUNTER HEALTH                     $10    ║
 ║     2 Spring Rolls (shrimp or pork) · DH sauce       ║
 ║                                                      ║
 ║  2  DIESEL CURE                               $10    ║
