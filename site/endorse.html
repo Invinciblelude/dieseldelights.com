@@ -220,6 +220,19 @@
       transition: background 0.3s;
     }
     .cta-form button:hover { background: var(--ember); }
+    .qp {
+      background: rgba(245,240,232,0.06);
+      border: 1px solid rgba(245,240,232,0.12);
+      color: rgba(245,240,232,0.7);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .qp:hover { border-color: var(--flame); color: var(--flame); }
+    .qp.active { background: var(--flame); color: var(--dark); border-color: var(--flame); font-weight: 600; }
 
     /* SHARE SECTION */
     .share {
@@ -351,35 +364,9 @@
     <h2>Local Voices</h2>
     <p class="wall-sub">Real people. Real Sacramento. Real hunger for something different.</p>
     <div class="endorsements" id="endorseWall">
-      <div class="endorse-card seed">
-        <div class="endorse-quote">"Sacramento is drowning in chains. We need a spot where a real chef is actually cooking &mdash; not reheating. $10 a plate? I'd eat here three times a week."</div>
-        <div class="endorse-name">Marcus T.</div>
-        <div class="endorse-title">Natomas</div>
-      </div>
-      <div class="endorse-card seed">
-        <div class="endorse-quote">"My family is Vietnamese and I've never seen anyone blend our food with American comfort the way Vince describes it. I need this to exist."</div>
-        <div class="endorse-name">Linh N.</div>
-        <div class="endorse-title">Elk Grove</div>
-      </div>
-      <div class="endorse-card seed">
-        <div class="endorse-quote">"I work at the fire station off Truxel. If a firefighter is behind this kitchen, you already know the food is going to hit different. We need this in Natomas."</div>
-        <div class="endorse-name">Chris D.</div>
-        <div class="endorse-title">North Natomas</div>
-      </div>
-      <div class="endorse-card seed">
-        <div class="endorse-quote">"Torched oysters and house sauces for $10? In Sacramento? Shut up and take my money. This city is ready for something like Diesel Delights."</div>
-        <div class="endorse-name">Alyssa R.</div>
-        <div class="endorse-title">Midtown</div>
-      </div>
-      <div class="endorse-card seed">
-        <div class="endorse-quote">"I've been waiting for a concept like this &mdash; no pretension, just incredible food at a price that respects the community. Sacramento deserves this."</div>
-        <div class="endorse-name">David K.</div>
-        <div class="endorse-title">South Natomas</div>
-      </div>
-      <div class="endorse-card seed">
-        <div class="endorse-quote">"The fried rice in a cup? The pho cup? That's genius. Quick, affordable, chef-quality. I'd bring my whole crew here after work."</div>
-        <div class="endorse-name">Tony V.</div>
-        <div class="endorse-title">West Sacramento</div>
+      <div class="endorse-card seed" style="border-style:dashed; opacity:0.5; text-align:center;">
+        <div class="endorse-quote" style="font-style:normal; color:rgba(245,240,232,0.4);">Be the first to endorse Diesel Delights. Your words go right here.</div>
+        <div class="endorse-name" style="color:var(--flame);">&darr; Submit below &darr;</div>
       </div>
     </div>
   </div>
@@ -390,7 +377,15 @@
     <form class="cta-form" id="endorseForm" action="https://formspree.io/f/xwvrvanl" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="text" name="neighborhood" placeholder="Your Neighborhood (e.g. Natomas, Midtown, Elk Grove)">
-      <textarea name="message" placeholder="Why does Sacramento need Diesel Delights? What excites you about this concept?" required></textarea>
+      <div class="quick-picks" style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+        <button type="button" class="qp" onclick="pickMsg(this)">Sacramento needs this!</button>
+        <button type="button" class="qp" onclick="pickMsg(this)">$10 chef-quality plates? I'm in.</button>
+        <button type="button" class="qp" onclick="pickMsg(this)">Love the Vietnamese-American concept.</button>
+        <button type="button" class="qp" onclick="pickMsg(this)">Bring it to my neighborhood!</button>
+        <button type="button" class="qp" onclick="pickMsg(this)">A firefighter who cooks? Take my money.</button>
+        <button type="button" class="qp" onclick="pickMsg(this)">We need more local spots like this.</button>
+      </div>
+      <textarea name="message" id="msgBox" placeholder="Or write your own — why does Sacramento need Diesel Delights?" required></textarea>
       <input type="email" name="email" placeholder="Email (optional — for opening day invite)">
       <input type="hidden" name="_subject" value="New Diesel Delights Endorsement!">
       <button type="submit" id="submitBtn">Submit My Endorsement</button>
@@ -424,7 +419,7 @@
     const submitBtn = document.getElementById('submitBtn');
     const successMsg = document.getElementById('successMsg');
 
-    const seedCount = document.querySelectorAll('.endorse-card.seed').length;
+    const seedCount = 0;
     let userEndorsements = JSON.parse(localStorage.getItem('dd_endorsements') || '[]');
 
     function updateCount() {
@@ -444,6 +439,14 @@
 
     userEndorsements.forEach(addCardToWall);
     updateCount();
+
+    function pickMsg(btn) {
+      var box = document.getElementById('msgBox');
+      document.querySelectorAll('.qp').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      box.value = btn.textContent;
+      box.focus();
+    }
 
     form.addEventListener('submit', function(ev) {
       ev.preventDefault();
