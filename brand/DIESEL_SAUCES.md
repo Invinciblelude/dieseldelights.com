@@ -11,11 +11,11 @@
 |------|------------|
 | **Diesel Counter Health** — 2 rolls, $10 | Diesel Hoisin (DH) |
 | **Diesel Cure** — 1 pc chicken/rice, $10 | Diesel Fish-Garlic Sauce |
-| **Pho Duoi** — 1 bowl, $10 | Regular hoisin + sriracha (classic) |
+| **Pho Duoi** — 1 cup, $10 | Regular hoisin + sriracha (classic) |
 | **Red Pure Diesel Leaf** — lettuce wraps, $10 | Diesel Chili Sauce (DC) |
 | **Diesel Torch Sensation** — 2 oysters, $10 | Diesel Chili Sauce (DC) |
-| **Ancient Diesel Fried Rice** — 1 bowl, $10 | Sriracha on the side |
-| **Diesel Ocean Comfort** — 1 bowl, $10 | No sauce — the broth does the work |
+| **Ancient Diesel Fried Rice** — 1 cup, $10 | Sriracha on the side |
+| **Diesel Ocean Comfort** — 1 cup, $10 | No sauce — the broth does the work |
 
 ---
 

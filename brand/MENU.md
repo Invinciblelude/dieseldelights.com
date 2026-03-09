@@ -70,8 +70,8 @@ anything else on the menu.
 
 | Detail | |
 |--------|------|
-| **Category** | Soup / Bowl |
-| **Serving** | 1 bowl |
+| **Category** | Soup / Cup |
+| **Serving** | 1 cup |
 | **Price** | $10 |
 | **Paired Sauce** | Regular hoisin + sriracha (classic pho style) |
 | **Key Prep** | 12+ hour broth, hand-selected proteins, fresh herb plate |
@@ -132,8 +132,8 @@ that makes the kitchen smell like home.
 
 | Detail | |
 |--------|------|
-| **Category** | Rice / Comfort |
-| **Serving** | 1 bowl |
+| **Category** | Rice / Cup |
+| **Serving** | 1 cup |
 | **Price** | $10 |
 | **Paired Sauce** | Sriracha on the side |
 | **Key Prep** | High-heat wok, day-old rice, Chinese sausage, shrimp, egg |
@@ -153,8 +153,8 @@ soul of this space and says "we respect the ocean too."
 
 | Detail | |
 |--------|------|
-| **Category** | Seafood / Bowl |
-| **Serving** | 1 bowl |
+| **Category** | Seafood / Cup |
+| **Serving** | 1 cup |
 | **Price** | $10 |
 | **Paired Sauce** | None — the broth is the sauce |
 | **Key Prep** | Live clams, aromatic broth, bread or rice on the side |
@@ -250,7 +250,7 @@ delivering ten times the soul. That's how you build a line out the door.
 ║     1 Ginger Chicken piece over Rice · DFG sauce     ║
 ║                                                      ║
 ║  3  PHO DUOI                                 $10    ║
-║     1 Bowl Ancient Diesel Soup · hoisin + sriracha   ║
+║     1 Cup Ancient Diesel Soup · hoisin + sriracha    ║
 ║                                                      ║
 ║  4  RED PURE DIESEL LEAF                      $10    ║
 ║     Tri-Tip Lettuce Wraps · DC sauce                 ║
@@ -259,10 +259,10 @@ delivering ten times the soul. That's how you build a line out the door.
 ║     2 Torched Oysters · DC sauce · +2 more $10      ║
 ║                                                      ║
 ║  6  ANCIENT DIESEL FRIED RICE                 $10    ║
-║     1 Bowl · Chinese Sausage & Shrimp · sriracha     ║
+║     1 Cup · Chinese Sausage & Shrimp · sriracha      ║
 ║                                                      ║
 ║  7  DIESEL OCEAN COMFORT                      $10    ║
-║     1 Bowl Clams in Broth · no sauce needed          ║
+║     1 Cup Clams in Broth · no sauce needed           ║
 ║                                                      ║
 ╠══════════════════════════════════════════════════════╣
 ║  SAUCE KEY                                           ║
