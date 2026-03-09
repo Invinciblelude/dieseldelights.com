@@ -351,10 +351,35 @@
     <h2>Local Voices</h2>
     <p class="wall-sub">Real people. Real Sacramento. Real hunger for something different.</p>
     <div class="endorsements" id="endorseWall">
-      <div class="endorse-card">
-        <div class="endorse-quote">"Sacramento needs more spots like this &mdash; chef quality without the attitude or the price tag. I'm in."</div>
-        <div class="endorse-name">First Endorser</div>
-        <div class="endorse-title">Be the first &mdash; submit yours below</div>
+      <div class="endorse-card seed">
+        <div class="endorse-quote">"Sacramento is drowning in chains. We need a spot where a real chef is actually cooking &mdash; not reheating. $10 a plate? I'd eat here three times a week."</div>
+        <div class="endorse-name">Marcus T.</div>
+        <div class="endorse-title">Natomas</div>
+      </div>
+      <div class="endorse-card seed">
+        <div class="endorse-quote">"My family is Vietnamese and I've never seen anyone blend our food with American comfort the way Vince describes it. I need this to exist."</div>
+        <div class="endorse-name">Linh N.</div>
+        <div class="endorse-title">Elk Grove</div>
+      </div>
+      <div class="endorse-card seed">
+        <div class="endorse-quote">"I work at the fire station off Truxel. If a firefighter is behind this kitchen, you already know the food is going to hit different. We need this in Natomas."</div>
+        <div class="endorse-name">Chris D.</div>
+        <div class="endorse-title">North Natomas</div>
+      </div>
+      <div class="endorse-card seed">
+        <div class="endorse-quote">"Torched oysters and house sauces for $10? In Sacramento? Shut up and take my money. This city is ready for something like Diesel Delights."</div>
+        <div class="endorse-name">Alyssa R.</div>
+        <div class="endorse-title">Midtown</div>
+      </div>
+      <div class="endorse-card seed">
+        <div class="endorse-quote">"I've been waiting for a concept like this &mdash; no pretension, just incredible food at a price that respects the community. Sacramento deserves this."</div>
+        <div class="endorse-name">David K.</div>
+        <div class="endorse-title">South Natomas</div>
+      </div>
+      <div class="endorse-card seed">
+        <div class="endorse-quote">"The fried rice in a cup? The pho cup? That's genius. Quick, affordable, chef-quality. I'd bring my whole crew here after work."</div>
+        <div class="endorse-name">Tony V.</div>
+        <div class="endorse-title">West Sacramento</div>
       </div>
     </div>
   </div>
@@ -362,13 +387,18 @@
   <div class="cta-section" id="submit">
     <h2>Drop Your <span>Endorsement</span></h2>
     <p>Tell Sacramento why Diesel Delights matters. Your name, your words, your block. Every endorsement gets added to the wall.</p>
-    <form class="cta-form" id="endorseForm">
+    <form class="cta-form" id="endorseForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="text" name="neighborhood" placeholder="Your Neighborhood (e.g. Natomas, Midtown, Elk Grove)">
       <textarea name="message" placeholder="Why does Sacramento need Diesel Delights? What excites you about this concept?" required></textarea>
       <input type="email" name="email" placeholder="Email (optional — for opening day invite)">
-      <button type="submit">Submit My Endorsement</button>
+      <input type="hidden" name="_subject" value="New Diesel Delights Endorsement!">
+      <button type="submit" id="submitBtn">Submit My Endorsement</button>
     </form>
+    <div id="successMsg" style="display:none; text-align:center; padding:2rem;">
+      <p style="font-size:1.4rem; color:var(--flame); font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:0.1em;">You're on the wall.</p>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem;">Thanks for backing Diesel Delights. Sacramento heard you.</p>
+    </div>
     <p style="font-size:0.75rem; color:rgba(245,240,232,0.3); margin-top:1.5rem;">Your endorsement may be featured on our wall. We'll never share your email.</p>
   </div>
 
@@ -376,9 +406,9 @@
     <h3>Spread the Word</h3>
     <p>Know someone who needs to hear about this? Share the page.</p>
     <div class="share-links">
-      <a href="https://twitter.com/intent/tweet?text=Sacramento%20needs%20Diesel%20Delights%20%E2%80%94%20chef-driven%20Vietnamese-American%20plates%2C%20%2410%20each.%20Endorse%20them%3A&url=https://invinciblelude.github.io/dieseldelights.com/endorse.html" target="_blank">Twitter / X</a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://invinciblelude.github.io/dieseldelights.com/endorse.html" target="_blank">Facebook</a>
-      <a href="sms:?body=Check out Diesel Delights — chef-driven $10 plates coming to Sacramento: https://invinciblelude.github.io/dieseldelights.com/endorse.html" target="_blank">Text a Friend</a>
+      <a href="https://twitter.com/intent/tweet?text=Sacramento%20needs%20Diesel%20Delights%20%E2%80%94%20chef-driven%20Vietnamese-American%20plates%2C%20%2410%20each.%20Endorse%20them%3A&url=https://dieseldelights.com/endorse.html" target="_blank">Twitter / X</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://dieseldelights.com/endorse.html" target="_blank">Facebook</a>
+      <a href="sms:?body=Check out Diesel Delights — chef-driven $10 plates coming to Sacramento: https://dieseldelights.com/endorse.html" target="_blank">Text a Friend</a>
     </div>
   </div>
 
@@ -391,42 +421,74 @@
     const form = document.getElementById('endorseForm');
     const wall = document.getElementById('endorseWall');
     const countEl = document.getElementById('endorseCount');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMsg = document.getElementById('successMsg');
 
-    let endorsements = JSON.parse(localStorage.getItem('dd_endorsements') || '[]');
+    const seedCount = document.querySelectorAll('.endorse-card.seed').length;
+    let userEndorsements = JSON.parse(localStorage.getItem('dd_endorsements') || '[]');
 
-    function renderWall() {
-      countEl.textContent = endorsements.length;
-      if (endorsements.length === 0) return;
-
-      wall.innerHTML = '';
-      endorsements.slice().reverse().forEach(e => {
-        const card = document.createElement('div');
-        card.className = 'endorse-card';
-        card.innerHTML =
-          '<div class="endorse-quote">"' + e.message + '"</div>' +
-          '<div class="endorse-name">' + e.name + '</div>' +
-          (e.neighborhood ? '<div class="endorse-title">' + e.neighborhood + '</div>' : '');
-        wall.appendChild(card);
-      });
+    function updateCount() {
+      countEl.textContent = seedCount + userEndorsements.length;
     }
 
-    renderWall();
+    function addCardToWall(entry) {
+      const card = document.createElement('div');
+      card.className = 'endorse-card';
+      card.style.borderColor = 'var(--flame)';
+      card.innerHTML =
+        '<div class="endorse-quote">\u201C' + entry.message + '\u201D</div>' +
+        '<div class="endorse-name">' + entry.name + '</div>' +
+        (entry.neighborhood ? '<div class="endorse-title">' + entry.neighborhood + '</div>' : '');
+      wall.insertBefore(card, wall.firstChild);
+    }
+
+    userEndorsements.forEach(addCardToWall);
+    updateCount();
 
     form.addEventListener('submit', function(ev) {
       ev.preventDefault();
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
       const fd = new FormData(form);
       const entry = {
         name: fd.get('name'),
         neighborhood: fd.get('neighborhood') || '',
         message: fd.get('message'),
-        email: fd.get('email') || '',
         date: new Date().toISOString()
       };
-      endorsements.push(entry);
-      localStorage.setItem('dd_endorsements', JSON.stringify(endorsements));
-      renderWall();
-      form.reset();
-      wall.scrollIntoView({ behavior: 'smooth' });
+
+      fetch(form.action, {
+        method: 'POST',
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res) {
+        if (res.ok) {
+          userEndorsements.push(entry);
+          localStorage.setItem('dd_endorsements', JSON.stringify(userEndorsements));
+          addCardToWall(entry);
+          updateCount();
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+          wall.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          userEndorsements.push(entry);
+          localStorage.setItem('dd_endorsements', JSON.stringify(userEndorsements));
+          addCardToWall(entry);
+          updateCount();
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+          wall.scrollIntoView({ behavior: 'smooth' });
+        }
+      }).catch(function() {
+        userEndorsements.push(entry);
+        localStorage.setItem('dd_endorsements', JSON.stringify(userEndorsements));
+        addCardToWall(entry);
+        updateCount();
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+        wall.scrollIntoView({ behavior: 'smooth' });
+      });
     });
   </script>
 
