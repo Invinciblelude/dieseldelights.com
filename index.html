@@ -436,6 +436,73 @@
       .cal-detail, .cal-bar-cell, .cal-bar-head { display: none; }
     }
 
+    /* ── DRINKS ── */
+    .drinks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .drink-feature {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(245,240,232,0.08);
+    }
+    .drink-feature img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+    }
+    .drink-feature-body {
+      padding: 2rem;
+    }
+    .drink-feature-body h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
+    .drink-feature-body p { color: rgba(245,240,232,0.6); font-size: 0.9rem; margin-bottom: 1rem; }
+    .drink-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .drink-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.5rem;
+      background: rgba(245,240,232,0.03);
+      border: 1px solid rgba(245,240,232,0.06);
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+    .drink-item:hover { border-color: rgba(245,240,232,0.15); }
+    .drink-item-info h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+    }
+    .drink-item-info span {
+      font-size: 0.8rem;
+      color: rgba(245,240,232,0.4);
+    }
+    .drink-price {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--flame);
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .drinks-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── GALLERY ── */
     .gallery-grid {
       display: grid;
@@ -596,6 +663,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#menu">Menu</a></li>
+      <li><a href="#drinks">Drinks</a></li>
       <li><a href="#sauces">Sauces</a></li>
       <li><a href="#pairings">Pairings</a></li>
       <li><a href="#calories">Calories</a></li>
@@ -734,6 +802,66 @@
         <h3>The Vince Experience</h3>
         <p>Limited seats. Set menu. 5 courses with pairings. This is where Michelin Vince lives &mdash; inside Diesel Delights.</p>
         <span class="price">$55 &ndash; $75 / person</span>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ DRINKS ══ -->
+  <section id="drinks">
+    <p class="section-label">Stay Fueled</p>
+    <h2 class="section-title">Drinks</h2>
+    <p class="section-subtitle">Vietnamese drip coffee is the house signature. Grab a can or a classic soda to wash it all down.</p>
+
+    <div class="drinks-grid">
+
+      <div class="drink-feature">
+        <img src="assets/viet-drip-coffee.png" alt="Vietnamese Drip Coffee">
+        <div class="drink-feature-body">
+          <h3>Diesel Drip &mdash; Vietnamese Coffee</h3>
+          <p>Slow-dripped through a phin filter over sweetened condensed milk. Hot or iced. Strong, bold, sweet &mdash; the way Vince grew up drinking it. This is the house drink.</p>
+          <span class="price">$4</span>
+        </div>
+      </div>
+
+      <div class="drink-list">
+        <div class="drink-item">
+          <div class="drink-item-info">
+            <h4>Coconut Juice</h4>
+            <span>Can &mdash; sweet, refreshing, tropical</span>
+          </div>
+          <div class="drink-price">$3</div>
+        </div>
+        <div class="drink-item">
+          <div class="drink-item-info">
+            <h4>Grass Jelly Drink</h4>
+            <span>Can &mdash; herbal, cool, lightly sweet</span>
+          </div>
+          <div class="drink-price">$3</div>
+        </div>
+        <div class="drink-item" style="border-left: 2px solid var(--flame);">
+          <div class="drink-item-info">
+            <h4>Pepsi</h4>
+            <span>Can &mdash; classic</span>
+          </div>
+          <div class="drink-price">$2</div>
+        </div>
+        <div class="drink-item" style="border-left: 2px solid var(--flame);">
+          <div class="drink-item-info">
+            <h4>Dr Pepper</h4>
+            <span>Can &mdash; the favorite</span>
+          </div>
+          <div class="drink-price">$2</div>
+        </div>
+        <div class="drink-item">
+          <div class="drink-item-info">
+            <h4>Water</h4>
+            <span>Bottle</span>
+          </div>
+          <div class="drink-price">$1</div>
+        </div>
       </div>
 
     </div>
