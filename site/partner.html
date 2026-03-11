@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner With Diesel Delights — Kitchen Collab Opportunity</title>
+  <meta name="description" content="Restaurant owners: add $5K-$8K/month to your kitchen with zero risk. Diesel Delights collab &amp; ghost kitchen partnership.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #1a1714;
+      --cream: #f5f0e8;
+      --flame: #e8632b;
+      --ember: #c44d1a;
+      --herb: #6b8f4e;
+      --gold: #c9a84c;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--cream);
+      line-height: 1.6;
+    }
+
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(26,23,20,0.95);
+      backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 3rem;
+      border-bottom: 1px solid rgba(245,240,232,0.06);
+    }
+    .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--cream); text-decoration: none; }
+    .nav-logo span { color: var(--flame); }
+    nav a.back-link { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    nav a.back-link:hover { color: var(--flame); }
+
+    .hero {
+      padding: 10rem 2rem 5rem;
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--flame);
+      color: var(--dark);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.2em;
+      padding: 0.4rem 1.2rem; border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      line-height: 1.1; margin-bottom: 1.5rem;
+    }
+    .hero h1 span { color: var(--flame); }
+    .hero p { font-size: 1.1rem; color: rgba(245,240,232,0.7); max-width: 620px; margin: 0 auto 2rem; }
+    .hero-stat-row {
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 3rem;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.8rem; font-weight: 700; color: var(--flame); line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: rgba(245,240,232,0.4); margin-top: 0.3rem;
+    }
+
+    .section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      text-transform: uppercase; letter-spacing: 0.2em;
+      font-size: 0.75rem; color: var(--flame); margin-bottom: 0.5rem;
+    }
+    .section h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.2rem; text-transform: uppercase;
+      letter-spacing: 0.06em; margin-bottom: 1.5rem;
+    }
+    .section p.sub { color: rgba(245,240,232,0.6); margin-bottom: 2.5rem; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .card {
+      background: rgba(245,240,232,0.03);
+      border: 1px solid rgba(245,240,232,0.06);
+      padding: 2rem; border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+    .card:hover { border-color: rgba(245,240,232,0.15); }
+    .card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.15rem; text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 0.75rem; color: var(--cream);
+    }
+    .card p { font-size: 0.9rem; color: rgba(245,240,232,0.55); }
+
+    .deal-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .deal {
+      background: rgba(245,240,232,0.03);
+      border: 1px solid rgba(245,240,232,0.08);
+      border-radius: 8px; padding: 2.5rem 2rem;
+      text-align: center; transition: all 0.3s; position: relative;
+    }
+    .deal:hover { border-color: var(--flame); }
+    .deal.featured { border-color: var(--flame); background: rgba(232,99,43,0.06); }
+    .deal-tag {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--flame); color: var(--dark);
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.15em;
+      padding: 0.3rem 1rem; border-radius: 2px;
+    }
+    .deal h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem; text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 0.5rem; color: var(--cream);
+    }
+    .deal .split {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.5rem; font-weight: 700; color: var(--flame);
+      margin: 1rem 0;
+    }
+    .deal p { font-size: 0.85rem; color: rgba(245,240,232,0.5); }
+    .deal ul {
+      list-style: none; text-align: left; margin-top: 1.5rem;
+      font-size: 0.85rem; color: rgba(245,240,232,0.6);
+    }
+    .deal ul li { padding: 0.4rem 0; border-bottom: 1px solid rgba(245,240,232,0.04); }
+    .deal ul li::before { content: '+ '; color: var(--flame); font-weight: 600; }
+
+    .numbers-table {
+      width: 100%; border: 1px solid rgba(245,240,232,0.08);
+      border-radius: 6px; overflow: hidden; margin-top: 2rem;
+    }
+    .num-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(245,240,232,0.05);
+      transition: background 0.2s;
+    }
+    .num-row:hover { background: rgba(245,240,232,0.02); }
+    .num-row.header {
+      background: rgba(245,240,232,0.04);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.15em; color: rgba(245,240,232,0.4);
+    }
+    .num-row .label { color: rgba(245,240,232,0.7); font-size: 0.9rem; }
+    .num-row .value {
+      text-align: right;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1.05rem; color: var(--cream);
+    }
+    .num-row .value.flame { color: var(--flame); }
+    .num-row .value.green { color: var(--herb); }
+
+    .menu-preview {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin-top: 2rem;
+    }
+    .menu-item {
+      background: rgba(245,240,232,0.03);
+      border: 1px solid rgba(245,240,232,0.06);
+      padding: 1.2rem; border-radius: 6px;
+    }
+    .menu-item h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem; text-transform: uppercase;
+      letter-spacing: 0.06em; margin-bottom: 0.3rem; color: var(--cream);
+    }
+    .menu-item span { font-size: 0.8rem; color: rgba(245,240,232,0.4); }
+    .menu-item .price { color: var(--flame); font-weight: 600; float: right; }
+
+    .timeline {
+      margin-top: 2rem; position: relative;
+      padding-left: 2rem; border-left: 2px solid rgba(245,240,232,0.08);
+    }
+    .tl-item { margin-bottom: 2.5rem; position: relative; }
+    .tl-item::before {
+      content: ''; position: absolute;
+      left: -2.55rem; top: 0.4rem;
+      width: 12px; height: 12px;
+      background: var(--flame); border-radius: 50%;
+    }
+    .tl-item h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--cream); margin-bottom: 0.3rem;
+    }
+    .tl-item p { font-size: 0.85rem; color: rgba(245,240,232,0.5); }
+
+    .cta-section {
+      padding: 6rem 2rem; text-align: center;
+      background: linear-gradient(180deg, transparent, rgba(232,99,43,0.06));
+    }
+    .cta-section h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.5rem; text-transform: uppercase;
+      letter-spacing: 0.06em; margin-bottom: 1rem;
+    }
+    .cta-section h2 span { color: var(--flame); }
+    .cta-section p { color: rgba(245,240,232,0.6); max-width: 500px; margin: 0 auto 2.5rem; }
+    .cta-form { max-width: 500px; margin: 0 auto; }
+    .cta-form input, .cta-form textarea {
+      width: 100%; background: rgba(245,240,232,0.05);
+      border: 1px solid rgba(245,240,232,0.1);
+      color: var(--cream); font-family: 'Inter', sans-serif;
+      font-size: 0.95rem; padding: 1rem 1.2rem;
+      border-radius: 4px; margin-bottom: 1rem; outline: none;
+      transition: border-color 0.3s;
+    }
+    .cta-form input:focus, .cta-form textarea:focus { border-color: var(--flame); }
+    .cta-form input::placeholder, .cta-form textarea::placeholder { color: rgba(245,240,232,0.3); }
+    .cta-form textarea { min-height: 100px; resize: vertical; }
+    .cta-form button {
+      width: 100%; background: var(--flame); color: var(--dark);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.15em;
+      padding: 1rem; border: none; border-radius: 4px;
+      cursor: pointer; transition: background 0.3s;
+    }
+    .cta-form button:hover { background: var(--ember); }
+
+    .quote-block {
+      border-left: 3px solid var(--flame);
+      padding: 2rem 2rem 2rem 2.5rem;
+      margin: 3rem 0;
+      background: rgba(232,99,43,0.04);
+      border-radius: 0 6px 6px 0;
+    }
+    .quote-block p {
+      font-size: 1.1rem; font-style: italic;
+      color: rgba(245,240,232,0.8); line-height: 1.7;
+    }
+    .quote-block cite {
+      display: block; margin-top: 1rem;
+      font-size: 0.85rem; font-style: normal;
+      color: var(--flame);
+    }
+
+    footer {
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(245,240,232,0.06);
+      font-size: 0.8rem; color: rgba(245,240,232,0.3);
+    }
+    footer a { color: var(--flame); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero { padding: 8rem 1.5rem 3rem; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .deal-options { grid-template-columns: 1fr; }
+      .hero-stat-row { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Diesel <span>Delights</span></a>
+    <a href="index.html" class="back-link">&larr; Back to Menu</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge">Restaurant Owners</div>
+    <h1>Add <span>$5K&ndash;$8K/Month</span> to Your Kitchen</h1>
+    <p>Diesel Delights is a chef-driven Vietnamese-American snack brand looking for kitchen partners in Sacramento. You provide the kitchen. We provide the recipes, sauces, branding, and customers. Zero risk. Zero buildout.</p>
+    <div class="hero-stat-row">
+      <div class="hero-stat">
+        <div class="hero-stat-num">7</div>
+        <div class="hero-stat-label">Signature Dishes</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-label">House Sauces</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">$10</div>
+        <div class="hero-stat-label">Every Plate</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">$0</div>
+        <div class="hero-stat-label">Your Risk</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Opportunity</p>
+    <h2>What We Bring to Your Kitchen</h2>
+    <p class="sub">Everything you need to run Diesel Delights alongside your existing menu &mdash; without changing a thing about your current operation.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>7 Tested Dishes</h3>
+        <p>Spring rolls, ginger chicken, pho cup, lettuce wraps, torched oysters, fried rice cup, clam cup. All $10. All designed for fast prep.</p>
+      </div>
+      <div class="card">
+        <h3>5 Proprietary Sauces</h3>
+        <p>Diesel Chili, Fish-Garlic, Hoisin, Fish Sauce, Peanut. We make them off-site and deliver fresh. Your kitchen just plates them.</p>
+      </div>
+      <div class="card">
+        <h3>Full Branding + Marketing</h3>
+        <p>Live website, social media, content creation, delivery app setup. We bring new customers to YOUR door.</p>
+      </div>
+      <div class="card">
+        <h3>Vietnamese Drip Coffee</h3>
+        <p>$4.99/cup at 84% margin. Phin filter service that adds premium to every ticket. Plus canned drinks.</p>
+      </div>
+      <div class="card">
+        <h3>Delivery App Revenue</h3>
+        <p>We create &ldquo;Diesel Delights&rdquo; as a separate listing on DoorDash and Uber Eats &mdash; orders flow to your kitchen.</p>
+      </div>
+      <div class="card">
+        <h3>Training + Recipe Cards</h3>
+        <p>We train your staff on every dish. Detailed recipe cards, sauce pairings, plating specs. 2&ndash;3 sessions and they're ready.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">Pick Your Deal</p>
+    <h2>Partnership Options</h2>
+    <p class="sub">Three ways to work together. Start with a pop-up test &mdash; no commitment.</p>
+    <div class="deal-options">
+      <div class="deal">
+        <h3>Pop-Up Test</h3>
+        <div class="split">$0</div>
+        <p>Zero risk trial</p>
+        <ul>
+          <li>2&ndash;3 Friday/Saturday nights</li>
+          <li>We cook, you host</li>
+          <li>Real sales data in one weekend</li>
+          <li>No commitment after</li>
+          <li>You keep 100% of your normal sales</li>
+        </ul>
+      </div>
+      <div class="deal featured">
+        <div class="deal-tag">Recommended</div>
+        <h3>Revenue Share</h3>
+        <div class="split">65/35</div>
+        <p>You keep 65% of Diesel Delights sales</p>
+        <ul>
+          <li>Full 7-dish menu in your kitchen</li>
+          <li>We handle all marketing</li>
+          <li>DoorDash + Uber Eats setup</li>
+          <li>90-day exit clause</li>
+          <li>Plus all new foot traffic for YOUR menu</li>
+        </ul>
+      </div>
+      <div class="deal">
+        <h3>Flat Fee</h3>
+        <div class="split">$2K</div>
+        <p>/month kitchen fee</p>
+        <ul>
+          <li>Fixed monthly payment to you</li>
+          <li>We run the Diesel Delights brand</li>
+          <li>Guaranteed income rain or shine</li>
+          <li>Plus % of delivery sales</li>
+          <li>Predictable revenue for you</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Math</p>
+    <h2>What 30 Orders/Day Looks Like</h2>
+    <p class="sub">Conservative numbers based on a visible Sacramento location.</p>
+    <div class="numbers-table">
+      <div class="num-row header">
+        <span>Metric</span>
+        <span style="text-align:right;">Value</span>
+      </div>
+      <div class="num-row">
+        <span class="label">Avg Diesel Delights Order</span>
+        <span class="value">$15</span>
+      </div>
+      <div class="num-row">
+        <span class="label">Orders Per Day</span>
+        <span class="value">30</span>
+      </div>
+      <div class="num-row">
+        <span class="label">Daily Revenue</span>
+        <span class="value">$450</span>
+      </div>
+      <div class="num-row">
+        <span class="label">Monthly Revenue</span>
+        <span class="value flame">$13,500</span>
+      </div>
+      <div class="num-row">
+        <span class="label">Your Cut (65%)</span>
+        <span class="value green">$8,775/mo</span>
+      </div>
+      <div class="num-row">
+        <span class="label">Our Cut (35%)</span>
+        <span class="value">$4,725/mo</span>
+      </div>
+      <div class="num-row">
+        <span class="label">Your New Customers (spillover to your menu)</span>
+        <span class="value green">Priceless</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Menu</p>
+    <h2>What Runs in Your Kitchen</h2>
+    <p class="sub">7 dishes designed for fast prep using equipment you already have.</p>
+    <div class="menu-preview">
+      <div class="menu-item">
+        <h4>Spring Rolls</h4>
+        <span>2 fresh rolls + DH sauce</span>
+        <span class="price">$10</span>
+      </div>
+      <div class="menu-item">
+        <h4>Ginger Chicken</h4>
+        <span>Over rice + DFG sauce</span>
+        <span class="price">$10</span>
+      </div>
+      <div class="menu-item">
+        <h4>Pho Cup</h4>
+        <span>12-hr broth + noodles</span>
+        <span class="price">$10</span>
+      </div>
+      <div class="menu-item">
+        <h4>Tri-Tip Wraps</h4>
+        <span>Lettuce wraps + DC sauce</span>
+        <span class="price">$10</span>
+      </div>
+      <div class="menu-item">
+        <h4>Torched Oysters</h4>
+        <span>2 pcs + DC sauce</span>
+        <span class="price">$10</span>
+      </div>
+      <div class="menu-item">
+        <h4>Fried Rice Cup</h4>
+        <span>Sausage + shrimp + egg</span>
+        <span class="price">$10</span>
+      </div>
+      <div class="menu-item">
+        <h4>Clam Cup</h4>
+        <span>Ginger-garlic broth</span>
+        <span class="price">$10</span>
+      </div>
+      <div class="menu-item">
+        <h4>Viet Drip Coffee</h4>
+        <span>Phin filter + condensed milk</span>
+        <span class="price">$4.99</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-block" style="max-width:900px; margin:3rem auto;">
+    <p>&ldquo;I'm not asking you to change your restaurant. I'm asking you to let me add $5,000&ndash;$8,000 a month to it using your kitchen, my recipes, and zero risk.&rdquo;</p>
+    <cite>&mdash; Vince Dang, Chef &amp; 15-Year Sacramento Firefighter</cite>
+  </div>
+
+  <div class="section">
+    <p class="section-label">The Plan</p>
+    <h2>90-Day Timeline</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <h4>Weeks 1&ndash;2: Pop-Up Test</h4>
+        <p>We run 2&ndash;3 nights in your kitchen. You watch. We cook. Real customers, real sales, real data. No strings.</p>
+      </div>
+      <div class="tl-item">
+        <h4>Weeks 3&ndash;4: Train + Launch</h4>
+        <p>If the numbers work, we train your staff on all 7 dishes + 5 sauces. Full menu goes live with branded materials.</p>
+      </div>
+      <div class="tl-item">
+        <h4>Month 2: Go Digital</h4>
+        <p>Diesel Delights launches on DoorDash and Uber Eats from your address. Social media starts driving traffic to your location.</p>
+      </div>
+      <div class="tl-item">
+        <h4>Month 3: Review + Scale</h4>
+        <p>We review the numbers together. If it's working, we keep going. If not, we shake hands and part ways. No risk.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="text-align:center;">
+    <p class="section-label">Who's Behind This</p>
+    <h2>About Vince</h2>
+    <p style="color:rgba(245,240,232,0.6); max-width:600px; margin:0 auto 2rem;">15+ years as a Sacramento firefighter. Vietnamese-American. Grew up in the kitchen. Built Diesel Delights to bring chef-quality food to everyday people at $10 a plate. The sauces are the secret &mdash; 5 proprietary recipes that tie 7 dishes together into one voice.</p>
+    <p style="color:rgba(245,240,232,0.4); font-size:0.9rem;">See the full menu and brand at <a href="index.html" style="color:var(--flame); text-decoration:none; font-weight:600;">dieseldelights.com</a></p>
+  </div>
+
+  <div class="cta-section" id="contact">
+    <h2>Let's <span>Talk</span></h2>
+    <p>Restaurant owner? Kitchen manager? Drop your info and we'll set up a 30-minute walkthrough. We'll bring sauce samples.</p>
+    <form class="cta-form" action="https://formspree.io/f/xwvrvanl" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="restaurant" placeholder="Restaurant Name &amp; Location">
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="hidden" name="_subject" value="Diesel Delights Partnership Inquiry">
+      <textarea name="message" placeholder="Tell us about your kitchen — what type of food, how many seats, what hours work best for a test?"></textarea>
+      <button type="submit">I'm Interested &mdash; Let's Talk</button>
+    </form>
+    <p style="font-size:0.75rem; color:rgba(245,240,232,0.3); margin-top:1.5rem;">We'll respond within 24 hours. No spam. No pressure.</p>
+  </div>
+
+  <footer>
+    <p><a href="index.html">Diesel Delights Vince Creations</a> &mdash; Sacramento, CA</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
