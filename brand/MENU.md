@@ -184,11 +184,11 @@ Full recipes in `DIESEL_SAUCES.md`.
 
 | Drink | Price | Notes |
 |-------|-------|-------|
-| **Diesel Drip — Vietnamese Coffee** | $4 | Slow-dripped phin filter over condensed milk. Hot or iced. The house drink. |
-| **Coconut Juice** | $3 | Can — sweet, refreshing, tropical |
-| **Grass Jelly Drink** | $3 | Can — herbal, cool, lightly sweet |
-| **Pepsi** | $2 | Can — classic |
-| **Dr Pepper** | $2 | Can — the favorite |
+| **Diesel Drip — Vietnamese Coffee** | $4.99 | Condensed milk first, dark roast drips through the phin on top. Pour over ice when ready. The house drink. |
+| **Young Coconut Drink** | $2.50 | Can — sweet, refreshing, real coconut pulp |
+| **Grass Jelly Drink** | $1.99 | Can — herbal, cool, lightly sweet |
+| **Pepsi** | $1.99 | Can — classic |
+| **Dr Pepper** | $1.99 | Can — the favorite |
 | **Water** | $1 | Bottle |
 
 ---
